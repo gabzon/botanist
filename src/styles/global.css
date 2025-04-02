@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-black-olive: #3B3C36;
+  --color-golden-brown: #84651E;
+  --color-satin-gold: #AC954C;
+  --color-moss-green: #215F12;
+  --color-true-black: #070707;
+  --color-gold: hsl(46, 65%, 52%);
+
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-prompt: 'Prompt', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-barlow: 'Barlow', sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: theme(--font-sans);
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: theme(--color-true-black);
+    color: white;
+    /* font-family: 'Prompt', system-ui, sans-serif; */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', serif;
+    font-weight: bold;
+  }
+}
+
+@layer components {  
+    .container {
+      @apply mx-auto px-4 max-w-7xl;
+    }
+  
+    @screen sm {
+      .container {
+        @apply px-6;
+      }
+    }
+    @screen lg {
+      .container {
+        @apply px-8;
+      }
+    }
+  
+    .section {
+      @apply py-16;
+    }
+  
+    @screen md {
+      .section {
+        @apply py-24;
+      }
+    }
+  }
+

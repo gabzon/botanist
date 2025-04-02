@@ -1,0 +1,175 @@
+---
+import { getCollection } from 'astro:content';
+import Button from './Button.astro';
+
+// const menuItems = await getCollection('menu');
+const salads = await getCollection('menu', ({ data }) => { return data.category === 'SALADS'; });
+const soups = await getCollection('menu', ({ data }) => { return data.category === 'SOUPS'; });
+const appetizers = await getCollection('menu', ({ data }) => { return data.category === 'APPETIZERS'; });
+const mainCourses = await getCollection('menu', ({ data }) => { return data.category === 'MAIN COURSES'; });
+const burgers = await getCollection('menu', ({ data }) => { return data.category === 'BURGERS'; });
+const kidsMenu = await getCollection('menu', ({ data }) => { return data.category === 'KIDS MENU'; });
+const desserts = await getCollection('menu', ({ data }) => { return data.category === 'DESSERTS'; });
+
+---
+
+<section id="menu" class="section bg-true-black py-24">
+  	<div class="container">
+    	<div class="text-center mb-16">
+      		<h2 class="text-3xl md:text-4xl font-bold text-gold mb-4">Our Menu</h2>
+      		<p class="max-w-2xl mx-auto text-slate-200">
+        		Inspired by Dalmatian culinary traditions, our plant-based menu celebrates local ingredients and sustainable practices.
+      		</p>
+		</div>
+
+		<!-- Menu Categories Tabs -->
+		<div x-data="{ activeTab: 'salads' }" class="my-12">
+			<div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+				<button @click="activeTab = 'salads'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
+					:class="{ 'bg-moss-green text-white': activeTab === 'salads', 'bg-white text-black-olive hover:bg-satin-gold': activeTab !== 'salads' }">
+					Salads
+				</button>
+				<button @click="activeTab = 'soups'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
+					:class="{ 'bg-moss-green text-white': activeTab === 'soups', 'bg-white text-black-olive hover:bg-true-gold': activeTab !== 'soups' }">
+					Soups
+				</button>
+				<button @click="activeTab = 'appetizers'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
+					:class="{ 'bg-moss-green text-white': activeTab === 'appetizers', 'bg-white text-black-olive hover:bg-golden-brown': activeTab !== 'appetizers' }">
+					Appetizers
+				</button>
+				<button @click="activeTab = 'main-courses'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
+					:class="{ 'bg-moss-green text-white': activeTab === 'main-courses', 'bg-white text-black-olive hover:bg-moss-green': activeTab !== 'main-courses' }">
+					Main Course
+				</button>
+				<button @click="activeTab = 'burgers'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300 text-black"
+					:class="{ 'bg-moss-green': activeTab === 'burgers', 'bg-white text-black-olive hover:bg-true-gold hover:text-white': activeTab !== 'burgers' }">
+					Burgers
+				</button>
+				<button @click="activeTab = 'kids-menu'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
+					:class="{ 'bg-moss-green text-white': activeTab === 'kids-menu', 'border border-true-gold text-true-gold hover:bg-true-gold hover:text-white': activeTab !== 'kids-menu' }">
+					Kids Menu
+				</button>
+				<button @click="activeTab = 'desserts'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
+					:class="{ 'bg-moss-green text-white': activeTab === 'desserts', 'border border-golden-brown text-satin-gold hover:bg-satin-gold hover:text-white': activeTab !== 'desserts' }">
+					Desserts
+				</button>
+			</div>
+
+			<!-- Salads -->
+			<div x-show="activeTab === 'salads'" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{salads.map(item => (
+					<div class="p-6 rounded-lg shadow-md flex border border-golden-brown">
+						<div class="flex-1 text-left">
+							<div class="flex justify-between items-start mb-2">
+								<h4 class="text-xl font-semibold">{item.data.name}</h4>
+								<span class="text-satin-gold font-medium">€{item.data.price}</span>
+							</div>
+							<p class="text-sm text-slate-100 mb-2">
+								{item.data.description}
+							</p>
+							{/* <span class="inline-block px-2 py-1 bg-moss-green/10 text-moss-green text-xs rounded-full">Gluten-free option</span> */}
+						</div>
+					</div>
+				))}
+			</div>	
+			
+			<!-- Soups -->
+			<div x-show="activeTab === 'soups'"  class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{soups.map(item => (
+					<div class="p-6 rounded-lg shadow-md flex border border-golden-brown">
+						<div class="flex-1 text-left">
+							<div class="flex justify-between items-start mb-2">
+								<h4 class="text-xl text-gold font-semibold">{item.data.name}</h4>
+								<span class="text-gold font-medium">€{item.data.price}</span>
+							</div>
+							<p class="text-sm text-slate-100 mb-2">{item.data.description}</p>
+						</div>
+					</div>
+				))}
+			</div>	
+
+			<!-- Appetizers -->
+			<div x-show="activeTab === 'appetizers'"  class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{appetizers.map(item => (
+					<div class="bg-true-black border border-golden-brown p-6 rounded-lg shadow-md flex">
+						<div class="flex-1 text-left">
+							<div class="flex justify-between items-start mb-2">
+								<h4 class="text-xl font-semibold">{item.data.name}</h4>
+								<span class="text-satin-gold font-medium">€{item.data.price}</span>
+							</div>
+							<p class="text-sm text-slate-100 mb-2">{item.data.description}</p>
+						</div>
+					</div>
+				))}
+			</div>	
+
+			<!-- Main Courses -->
+			<div x-show="activeTab === 'main-courses'"  class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{mainCourses.map(item => (
+					<div class="p-6 rounded-lg shadow-md flex border border-golden-brown">
+						<div class="flex-1 text-left">
+							<div class="flex justify-between items-start mb-2">
+								<h4 class="text-xl font-semibold">{item.data.name}</h4>
+								<span class="text-satin-gold font-medium">€{item.data.price}</span>
+							</div>
+							<p class="text-sm text-slate-100 mb-2">{item.data.description}</p>
+						</div>
+					</div>
+				))}
+			</div>	
+
+			<!-- Burgers -->
+			<div x-show="activeTab === 'burgers'"  class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{burgers.map(item => (
+					<div class="p-6 rounded-lg shadow-md flex border border-golden-brown">
+						<div class="flex-1 text-left">
+							<div class="flex justify-between items-start mb-2">
+								<h4 class="text-xl font-semibold">{item.data.name}</h4>
+								<span class="text-satin-gold font-medium">€{item.data.price}</span>
+							</div>
+							<p class="text-sm text-slate-100 mb-2">{item.data.description}</p>
+						</div>
+					</div>
+				))}
+			</div>	
+			
+			<!-- Kids Menu -->
+			<div x-show="activeTab === 'kids-menu'" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{kidsMenu.map(item => (
+					<div class="p-6 rounded-lg shadow-md flex border border-golden-brown">
+						<div class="flex-1 text-left">
+							<div class="flex justify-between items-start mb-2">
+								<h4 class="text-xl font-semibold">{item.data.name}</h4>
+								<span class="text-satin-gold font-medium">€{item.data.price}</span>
+							</div>
+							<p class="text-sm text-slate-100 mb-2">{item.data.description}</p>
+						</div>
+					</div>
+				))}
+			</div>	
+
+			<!-- Desserts -->
+			<div x-show="activeTab === 'desserts'" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{desserts.map(item => (
+					<div class="p-6 rounded-lg shadow-md flex border border-golden-brown">
+						<div class="flex-1 text-left">
+							<div class="flex justify-between items-start mb-2">
+								<h4 class="text-xl font-semibold">{item.data.name}</h4>
+								<span class="text-satin-gold font-medium">€{item.data.price}</span>
+							</div>
+							<p class="text-sm text-slate-100 mb-2">{item.data.description}</p>
+						</div>
+					</div>
+				))}
+			</div>	
+
+		</div>
+
+
+    	<!-- Call to Action -->
+    	<div class="text-center mt-12">
+      		<p class="mb-6 text-satin-gold italic">Our menu changes seasonally to showcase the freshest local ingredients. All dishes are 100% plant-based.</p>
+      		<Button url="#" text="Book Your Table" style="primary" />
+    	</div>
+  	</div>
+</section>

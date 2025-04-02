@@ -1,0 +1,22 @@
+---
+let css = '';
+const { 
+    url = '#',
+    text = 'Click me', 
+    style = '',
+} = Astro.props;
+
+
+switch (style) {
+    case 'primary':
+        css = 'text-white bg-moss-green hover:bg-[#1E5410]';
+        break;
+    case 'secondary':
+        css = 'text-true-black bg-gold hover:bg-satin-gold';
+        break;
+    default:
+        css = '';
+}    
+---
+
+<a href={url} class={`inline-block px-6 py-3 rounded-md font-medium transition-colors duration-300 ${css}`}>{text}</a>

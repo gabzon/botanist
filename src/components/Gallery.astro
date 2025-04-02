@@ -1,0 +1,73 @@
+---
+// Import necessary for Astro image handling
+import { Image } from 'astro:assets';
+
+// Import all images from the gallery folder
+const galleryImages = await Astro.glob('../images/gallery/*');
+
+// Group images into 4 columns
+const columns = [[], [], [], []];
+galleryImages.forEach((image, index) => {
+  const columnIndex = index % 4;
+  columns[columnIndex].push(image);
+});
+---
+
+<section class="gallery-section section py-24">
+  <div class="container">
+    <h2 class="text-3xl md:text-4xl font-bold text-gold mb-4 text-center">Our Gallery</h2>
+    <p class="max-w-2xl mx-auto text-slate-200 text-center">
+        Experience the ambiance, artistry, and attention to detail that defines <i>Le Botanist</i> through our curated gallery of images.
+    </p>
+    <!-- Masonry-style gallery grid -->
+    <div class="pswp-gallery grid grid-cols-2 sm:grid-cols-4 gap-2 mt-12" id="gallery">
+      {columns.map((column, colIndex) => (
+        <div class="space-y-2">
+          {column.map((image, imgIndex) => {
+            const isPortrait = image.default.width < image.default.height;
+            return (
+              <a 
+                href={image.default.src} 
+                data-pswp-width={image.default.width} 
+                data-pswp-height={image.default.height}
+                target="_blank"
+                class="gallery-item overflow-hidden rounded-lg block"
+              >
+                <Image 
+                  src={image.default} 
+                  alt={`Gallery image ${colIndex * columns[0].length + imgIndex + 1}`} 
+                  class="w-full h-auto object-cover transition-transform hover:scale-105"
+                  width={400}
+                  height={isPortrait ? 600 : 300}
+                />
+              </a>
+            );
+          })}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- PhotoSwipe CSS and JS via CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.3.8/dist/photoswipe.css">
+<script is:inline src="https://cdn.jsdelivr.net/npm/photoswipe@5.3.8/dist/umd/photoswipe.umd.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/photoswipe@5.3.8/dist/umd/photoswipe-lightbox.umd.min.js"></script>
+
+<!-- PhotoSwipe initialization -->
+<script is:inline>
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#gallery',
+    children: 'a',
+    pswpModule: PhotoSwipe
+  });
+  
+  lightbox.init();
+</script>
+
+<style>
+  .gallery-item {
+    cursor: pointer;
+    display: block;
+  }
+</style>

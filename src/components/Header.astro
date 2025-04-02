@@ -1,0 +1,62 @@
+---
+import Button from './Button.astro';
+---
+
+<header class="fixed w-full bg-true-black backdrop-blur-sm z-50 shadow-sm">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between py-4">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <span class="text-2xl font-bold text-white hover:text-gold">The Botanist</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="#hero" class="text-slate-200 hover:text-gold font-medium transition-colors">Home</a>
+        <a href="#menu" class="text-slate-200 hover:text-gold font-medium transition-colors">Menu</a>
+        <a href="#gallery" class="text-slate-200 hover:text-gold font-medium transition-colors">Gallery</a>
+        <a href="#contact" class="text-slate-200 hover:text-gold font-medium transition-colors">Contact</a>
+      </nav>
+
+      <!-- Reservation Button (Desktop) -->
+      <div class="hidden md:block">
+        <Button url="#" text="Book a Table" style="primary" />
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        class="md:hidden text-black-olive focus:outline-none" 
+        x-data="{}"
+        @click="$dispatch('toggle-menu')"
+        aria-label="Toggle Menu"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div 
+    x-data="{ open: false }" 
+    x-show="open" 
+    x-transition:enter="transition ease-out duration-200" 
+    x-transition:enter-start="opacity-0 -translate-y-4" 
+    x-transition:enter-end="opacity-100 translate-y-0" 
+    x-transition:leave="transition ease-in duration-150" 
+    x-transition:leave-start="opacity-100 translate-y-0" 
+    x-transition:leave-end="opacity-0 -translate-y-4" 
+    @toggle-menu.window="open = !open"
+    class="md:hidden bg-white shadow-lg absolute w-full left-0 py-4 px-4"
+    style="display: none;"
+  >
+    <nav class="flex flex-col space-y-4">
+      <a href="#hero" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">Home</a>
+      <a href="#menu" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">Menu</a>
+      <a href="#gallery" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">Gallery</a>
+      <a href="#contact" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">Contact</a>
+      <a href="#" class="btn-primary text-center mt-2">Book a Table</a>
+    </nav>
+  </div>
+</header>
