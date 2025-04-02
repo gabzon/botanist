@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// Import tailwind correctly
 import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
