@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import MenuCard from './MenuCard.astro';
 import Button from './Button.astro';
 
 // const menuItems = await getCollection('menu');
@@ -26,31 +27,31 @@ const desserts = await getCollection('menu', ({ data }) => { return data.categor
 		<div x-data="{ activeTab: 'salads' }" class="my-12">
 			<div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
 				<button @click="activeTab = 'salads'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
-					:class="{ 'bg-moss-green text-white': activeTab === 'salads', 'bg-white text-black-olive hover:bg-satin-gold': activeTab !== 'salads' }">
+					:class="{ 'bg-gold text-true-black': activeTab === 'salads', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'salads' }">
 					Salads
 				</button>
 				<button @click="activeTab = 'soups'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
-					:class="{ 'bg-moss-green text-white': activeTab === 'soups', 'bg-white text-black-olive hover:bg-true-gold': activeTab !== 'soups' }">
+					:class="{ 'bg-gold text-true-black': activeTab === 'soups', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'soups' }">
 					Soups
 				</button>
 				<button @click="activeTab = 'appetizers'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
-					:class="{ 'bg-moss-green text-white': activeTab === 'appetizers', 'bg-white text-black-olive hover:bg-golden-brown': activeTab !== 'appetizers' }">
+					:class="{ 'bg-gold text-true-black': activeTab === 'appetizers', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'appetizers' }">
 					Appetizers
 				</button>
 				<button @click="activeTab = 'main-courses'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
-					:class="{ 'bg-moss-green text-white': activeTab === 'main-courses', 'bg-white text-black-olive hover:bg-moss-green': activeTab !== 'main-courses' }">
+					:class="{ 'bg-gold text-true-black': activeTab === 'main-courses', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'main-courses' }">
 					Main Course
 				</button>
 				<button @click="activeTab = 'burgers'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300 text-black"
-					:class="{ 'bg-moss-green': activeTab === 'burgers', 'bg-white text-black-olive hover:bg-true-gold hover:text-white': activeTab !== 'burgers' }">
+					:class="{ 'bg-gold text-true-black': activeTab === 'burgers', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'burgers' }">
 					Burgers
 				</button>
 				<button @click="activeTab = 'kids-menu'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
-					:class="{ 'bg-moss-green text-white': activeTab === 'kids-menu', 'border border-true-gold text-true-gold hover:bg-true-gold hover:text-white': activeTab !== 'kids-menu' }">
+					:class="{ 'bg-gold text-true-black': activeTab === 'kids-menu', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'kids-menu' }">
 					Kids Menu
 				</button>
 				<button @click="activeTab = 'desserts'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
-					:class="{ 'bg-moss-green text-white': activeTab === 'desserts', 'border border-golden-brown text-satin-gold hover:bg-satin-gold hover:text-white': activeTab !== 'desserts' }">
+					:class="{ 'bg-gold text-true-black': activeTab === 'desserts', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'desserts' }">
 					Desserts
 				</button>
 			</div>
@@ -58,108 +59,49 @@ const desserts = await getCollection('menu', ({ data }) => { return data.categor
 			<!-- Salads -->
 			<div x-show="activeTab === 'salads'" class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{salads.map(item => (
-					<div class="p-6 rounded-lg shadow-md flex border border-golden-brown">
-						<div class="flex-1 text-left">
-							<div class="flex justify-between items-start mb-2">
-								<h4 class="text-xl font-semibold">{item.data.name}</h4>
-								<span class="text-satin-gold font-medium">€{item.data.price}</span>
-							</div>
-							<p class="text-sm text-slate-100 mb-2">
-								{item.data.description}
-							</p>
-							{/* <span class="inline-block px-2 py-1 bg-moss-green/10 text-moss-green text-xs rounded-full">Gluten-free option</span> */}
-						</div>
-					</div>
+					<MenuCard item={item.data} />
 				))}
 			</div>	
 			
 			<!-- Soups -->
 			<div x-show="activeTab === 'soups'"  class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{soups.map(item => (
-					<div class="p-6 rounded-lg shadow-md flex border border-golden-brown">
-						<div class="flex-1 text-left">
-							<div class="flex justify-between items-start mb-2">
-								<h4 class="text-xl text-gold font-semibold">{item.data.name}</h4>
-								<span class="text-gold font-medium">€{item.data.price}</span>
-							</div>
-							<p class="text-sm text-slate-100 mb-2">{item.data.description}</p>
-						</div>
-					</div>
+					<MenuCard item={item.data} />
 				))}
 			</div>	
 
 			<!-- Appetizers -->
 			<div x-show="activeTab === 'appetizers'"  class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{appetizers.map(item => (
-					<div class="bg-true-black border border-golden-brown p-6 rounded-lg shadow-md flex">
-						<div class="flex-1 text-left">
-							<div class="flex justify-between items-start mb-2">
-								<h4 class="text-xl font-semibold">{item.data.name}</h4>
-								<span class="text-satin-gold font-medium">€{item.data.price}</span>
-							</div>
-							<p class="text-sm text-slate-100 mb-2">{item.data.description}</p>
-						</div>
-					</div>
+					<MenuCard item={item.data} />
 				))}
 			</div>	
 
 			<!-- Main Courses -->
 			<div x-show="activeTab === 'main-courses'"  class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{mainCourses.map(item => (
-					<div class="p-6 rounded-lg shadow-md flex border border-golden-brown">
-						<div class="flex-1 text-left">
-							<div class="flex justify-between items-start mb-2">
-								<h4 class="text-xl font-semibold">{item.data.name}</h4>
-								<span class="text-satin-gold font-medium">€{item.data.price}</span>
-							</div>
-							<p class="text-sm text-slate-100 mb-2">{item.data.description}</p>
-						</div>
-					</div>
+					<MenuCard item={item.data} />
 				))}
 			</div>	
 
 			<!-- Burgers -->
 			<div x-show="activeTab === 'burgers'"  class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{burgers.map(item => (
-					<div class="p-6 rounded-lg shadow-md flex border border-golden-brown">
-						<div class="flex-1 text-left">
-							<div class="flex justify-between items-start mb-2">
-								<h4 class="text-xl font-semibold">{item.data.name}</h4>
-								<span class="text-satin-gold font-medium">€{item.data.price}</span>
-							</div>
-							<p class="text-sm text-slate-100 mb-2">{item.data.description}</p>
-						</div>
-					</div>
+					<MenuCard item={item.data} />
 				))}
 			</div>	
 			
 			<!-- Kids Menu -->
 			<div x-show="activeTab === 'kids-menu'" class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{kidsMenu.map(item => (
-					<div class="p-6 rounded-lg shadow-md flex border border-golden-brown">
-						<div class="flex-1 text-left">
-							<div class="flex justify-between items-start mb-2">
-								<h4 class="text-xl font-semibold">{item.data.name}</h4>
-								<span class="text-satin-gold font-medium">€{item.data.price}</span>
-							</div>
-							<p class="text-sm text-slate-100 mb-2">{item.data.description}</p>
-						</div>
-					</div>
+					<MenuCard item={item.data} />
 				))}
 			</div>	
 
 			<!-- Desserts -->
 			<div x-show="activeTab === 'desserts'" class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{desserts.map(item => (
-					<div class="p-6 rounded-lg shadow-md flex border border-golden-brown">
-						<div class="flex-1 text-left">
-							<div class="flex justify-between items-start mb-2">
-								<h4 class="text-xl font-semibold">{item.data.name}</h4>
-								<span class="text-satin-gold font-medium">€{item.data.price}</span>
-							</div>
-							<p class="text-sm text-slate-100 mb-2">{item.data.description}</p>
-						</div>
-					</div>
+					<MenuCard item={item.data} />
 				))}
 			</div>	
 

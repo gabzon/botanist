@@ -1,12 +1,14 @@
 ---
 // Import necessary for Astro image handling
 import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
-// Import all images from the gallery folder
-const galleryImages = await Astro.glob('../images/gallery/*');
+// Import all images from the gallery folder using import.meta.glob instead of Astro.glob
+const galleryImagesImports = import.meta.glob<{ default: ImageMetadata }>('../images/gallery/*', { eager: true });
+const galleryImages = Object.values(galleryImagesImports);
 
 // Group images into 4 columns
-const columns = [[], [], [], []];
+const columns: Array<typeof galleryImages> = [[], [], [], []];
 galleryImages.forEach((image, index) => {
   const columnIndex = index % 4;
   columns[columnIndex].push(image);
