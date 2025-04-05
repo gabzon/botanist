@@ -4,4 +4,5 @@ description: "Fresh parsley and tomato salad with olive oil, olives, homemade wi
 price: 8.10
 category: "SALADS"
 tags: ["vegan", "local-specialty"]
+sortOrder: 2
 ---

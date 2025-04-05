@@ -4,4 +4,5 @@ description: "Fresh fennel salad with hazelnuts, apple, orange, purple onion wit
 price: 10.10
 category: "SALADS"
 tags: ["vegan", "seasonal"]
+sortOrder: 3
 ---

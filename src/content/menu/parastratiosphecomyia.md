@@ -4,4 +4,5 @@ description: "Bruschetta with zucchini spread, cauliflower and hazelnut spread a
 price: 11.60
 category: "APPETIZERS"
 tags: ["vegan", "shareable"]
+sortOrder: 32
 ---

@@ -19,7 +19,8 @@ const menuCollection = defineCollection({
       message: "Category must be one of the predefined menu categories"
     }),
     // Optional tags
-    tags: z.array(z.string()).optional()
+    tags: z.array(z.string()).optional(),
+    sortOrder: z.number().optional()
   })
 });
 

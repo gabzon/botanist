@@ -4,4 +4,5 @@ description: "Chickpea dough with fried aged eggplant and bell pepper with belug
 price: 14.20
 category: "APPETIZERS"
 tags: ["vegan", "signature"]
+sortOrder: 30
 ---

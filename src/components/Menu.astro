@@ -12,6 +12,8 @@ const burgers = await getCollection('menu', ({ data }) => { return data.category
 const kidsMenu = await getCollection('menu', ({ data }) => { return data.category === 'KIDS MENU'; });
 const desserts = await getCollection('menu', ({ data }) => { return data.category === 'DESSERTS'; });
 
+const sortedSalads = salads.sort((a:any, b:any) => a.data.sortOrder - b.data.sortOrder);
+const sortedAppetizers = appetizers.sort((a:any, b:any) => a.data.sortOrder - b.data.sortOrder);
 ---
 
 <section id="menu" class="section bg-true-black py-24">
@@ -58,7 +60,7 @@ const desserts = await getCollection('menu', ({ data }) => { return data.categor
 
 			<!-- Salads -->
 			<div x-show="activeTab === 'salads'" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{salads.map(item => (
+				{sortedSalads.map(item => (
 					<MenuCard item={item.data} />
 				))}
 			</div>	
@@ -72,7 +74,7 @@ const desserts = await getCollection('menu', ({ data }) => { return data.categor
 
 			<!-- Appetizers -->
 			<div x-show="activeTab === 'appetizers'"  class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{appetizers.map(item => (
+				{sortedAppetizers.map(item => (
 					<MenuCard item={item.data} />
 				))}
 			</div>	

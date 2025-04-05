@@ -4,4 +4,5 @@ description: "Cooked broad beans and potato appetizer, with potato and beet chip
 price: 12.30
 category: "APPETIZERS"
 tags: ["vegetarian", "gluten-free"]
+sortOrder: 31
 ---
