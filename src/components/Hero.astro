@@ -3,6 +3,9 @@ import { Image } from 'astro:assets';
 import hero from '../images/hero.jpg';
 import logo from '../images/botanist-slogan.png';
 import Button from './Button.astro';
+const {
+  phone = "+9999999999"
+} = Astro.props;
 ---
 
 
@@ -26,8 +29,13 @@ import Button from './Button.astro';
     </p>
     
     <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-      <Button url="#menu" text="Explore Our Menu" style="primary" />
-      <Button url="#reservations" text="Book a Table" style="secondary" />
+      <Button url="#menu" text="Explore Our Menu" style="secondary" />
+      <Button url={`tel:${phone}`} style="primary">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+        </svg>
+        <span>Book a Table</span>
+      </Button>
     </div>
 
     <!-- Rating Badge -->

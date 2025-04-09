@@ -1,0 +1,530 @@
+[
+  {
+    "name": "PJENUŠAVA VINA / SPARKLING WINES",
+    "sections": [
+      {
+        "description": {
+          "hr": "OSJETI TERROIR NAJBOLJE PJENUŠAVE REGIJE U HRVATSKOJ, PLEŠIVICE...",
+          "en": "TASTE THE TERROIR FROM THE BEST SPARKLING REGION IN CROATIA, PLEŠIVICE..."
+        },
+        "items": [
+          { 
+            "name": "/ Jagunić, Three Stars, Brut, NV", 
+            "price": 45.00,
+            "priceGlass": 6.80,
+            "region": "Plešivica, Croatia / Hrvatska",
+            "description": {
+              "hr": "Pjenušac rađen klasičnom metodom, od grožđa iz tri različita vinograda. Preko 17 sorti prisutno je u ovom svježem i elegantnom pjenušcu. Plešivica zahvaljujući svojoj hladnijoj klimi i specifičnom terroiru proizvodi najbolja pjenušava vina u Hrvatskoj.",
+              "en": "Sparkling wine produced using the classic method with grapes from three different vineyards. Over 17 varietals are present in this fresh and elegant sparkling wine. Thanks to its cooler climate and specific terroir, Plešivica produces the best sparkling wines in Croatia."
+            }
+          },
+          { 
+            "name": "/ Šember, Rosé, Brut, NV", 
+            "price": 49.00,
+            "priceGlass": 7.30,
+            "region": "Plešivica, Croatia / Hrvatska",
+            "description": {
+              "en": "Reputed as one of the most sought-after rosé sparkling wines in Croatia. Sparkling wine produced using the classic method from the Pinot Noir varietal. Plešivica's superb terroir is reflected in the fruitiness of this elegant sparkling wine.",
+              "hr": "Na glasu kao jedan od najtraženijih ružičastih pjenušaca Hrvatske. Pjenušac rađen klasičnom metodom od sorte pinot noir. Plešivički vrhunski terroir očituje se u voćnosti ovog elegantnog pjenušca."
+            }
+          },
+          { 
+            "name": "/ Korak, Blanc de Blancs, Brut Nature", 
+            "price": 64.00,
+            "region": "Plešivica, Croatia / Hrvatska",
+            "description": {
+              "en": "Vintage sparkling wine made by using the classic method from the Chardonnay varietal and without dosage. The sparkling wine is matured in the bottle for 4 years from its own yeast, and enchants with complexity and authenticity. It comes from Plešivica, the best wine region for sparkling wine in Croatia.",
+              "hr": "Vintage pjenušac rađen klasičnom metodom od sorte Chardonnay i bez dosage-a. Pjenušac je dozrijevao u boci 4 godine na vlastitim kvascima te očarava kompleksnošću i autolitikom. Dolazi s Plešivice, najbolje vinske regije za pjenušce u Hrvatskoj."
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "DAŠAK STAROG SVIJETA U ČAŠI ZA PJENUŠAC...",
+          "en": "A TOUCH OF THE OLD WORLD IN A SPARKLING WINE GLASS..."
+        },
+        "items": [
+          { 
+            "name": "/ Ca'di Alte, Prosecco, Extra Dry, NV", 
+            "price": 35.00,
+            "priceGlass": 5.30,
+            "region": "Veneto, Italy / Italija",
+            "description": {
+              "en": "Light and refreshing sparkling wine from the Glera varietal. Casual and quaffable. Prosecco justifies its status as one of the best-selling sparkling wines in the world. This Prosecco comes from vineyards in the hilly area of the region, thus ensuring excellent quality.",
+              "hr": "Lagano i osvježavajuće pjenušavo vino od sorte glera. Prosecco svojom ležernošću i pitkošću opravdava status jednog od najprodavanijih pjenušavih vina svijeta. Ovaj Prosecco dolazi iz vinograda brežuljkastog područja regije, čime osigurava izvrsnu kvalitetu."
+            }
+          },
+          { 
+            "name": "/ Charles Heidsieck, Champagne, Brut Reserve, NV", 
+            "price": 90.00,
+            "region": "Champagne, France / Francuska",
+            "description": {
+              "en": "The most prestigious NV champagne in the world. For 15 years, Charles Heidsieck was chosen for the prestigious French title: \"Sparkling winemaker of the year\". The winery was founded by a famous bohemian, better known as \"Champagne Charlie\".",
+              "hr": "Najprestižniji NV šampanjac na svijetu. Charles Heidsieck je čak 15 godina izabiran za prestižnu francusku titulu: \"Sparkling winemaker of the year\". Vinariju je osnovao slavni boem, poznatiji kao \"Champagne Charlie\"."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "BIJELA VINA / WHITE WINES",
+    "sections": [
+      {
+        "description": {
+          "hr": "",
+          "en": ""
+        },
+        "items": [
+          { 
+            "name": "/ PZ Čara, Pošip, Marko Polo", 
+            "price": 56.00,
+            "priceGlass": 8.30,
+            "region": "Južna Dalmacija, Hrvatska / Southern Dalmatia, Croatia",
+            "description": {
+              "hr": "Premium vino, sorte pošip, najpoznatije zadruge u Hrvatskoj. Zadruga u kojoj je stasala većina vinara otoka Korčule. Zadruga je prva dala predodžbu kako pošip vinificirati! Ovo vino zadovoljava i najprobranija nepca, svojim punim tijelom, voštanom strukturom te bogatom aromatikom.",
+              "en": "Premium wine, Pošip varieties from the most famous cooperatives in Croatia. The cooperative where most of the winemakers of the island of Korčula grew up. This cooperative was the first to give the idea of how to vinify pošip! This wine satisfies even the most discerning palates, with its full body, waxy structure and rich aromatics."
+            }
+          },
+          { 
+            "name": "/ Grabovac, Draga", 
+            "price": 60.00,
+            "region": "Dalmatinska zagora, Hrvatska / Dalmatian Zagora, Croatia",
+            "description": {
+              "hr": "Veliko dalmatinsko bijelo vino, u svakom pogled. Cuvée čak pet sorti; viogniera, sauvignon blanca, chardonnaya, žilavke i pošipa, s jednog od najboljih položaja Dalmatinske zagore, Vučje Drage. Osvježavajuća svježina i decentno drvo, spojeno s nevjerojatnim balansom aroma.",
+              "en": "Great Dalmatian white wine, in every respect. Cuvée has as many as five varieties; viognier, sauvignon blanc, chardonnay, žilavka and pošip, from one of the best locations in Dalmatian Zagora, Vučja Draga. Freshness and woodiness, combined with an delectable balance of aromas."
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "DO ISTRE I NAZAD, SVJEŽINOM I LAKOĆĆOM...",
+          "en": "TO ISTRIA AND BACK, WITH FRESHNESS AND SPRITELINESS..."
+        },
+        "items": [
+          { 
+            "name": "/ Tomaz, Malvazija, Avangarde", 
+            "price": 38.00,
+            "priceGlass": 5.60,
+            "region": "Istra, Hrvatska / Istria, Croatia",
+            "description": {
+              "hr": "Istarska malvazija jedna je od najtraženijih sorti u vrelim ljetnim mjesecima. Malvazija Avangarde nosi odlike tipičnog motovunskog terroira iz kojeg dolazi i jedno je od najnagrađivanijih vina Istre.",
+              "en": "Istrian malvazija is one of the most sought-after varietals during the hot summer months. Malvazija Avangarde bears the characteristics of the typical Motovun terroir from which it comes and is one of the most awarded wines of Istria."
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "PLEŠIVICA I CHARDONNAY SE VOLE...",
+          "en": "PLEŠIVICA AND CHARDONNAY LOVE EACH OTHER..."
+        },
+        "items": [
+          { 
+            "name": "/ Korak, Chardonnay Sur Lie", 
+            "price": 65.00,
+            "region": "Plešivica, Hrvatska / Plešivica, Croatia",
+            "description": {
+              "hr": "Izreka \"Anything but chardonnay\" ovdje ne vrijedi. Kada je riječ o chardonnayu u Hrvatskoj, on se najbolje snašao upravo u nešto hladnijim vinogorjima kontinentalne Hrvatske. Ovaj sur lie zarobio je u na jednom mjestu kremoznost, kompleksnost i mineralnost.",
+              "en": "The saying \"Anything but chardonnay\" does not apply here. When it comes to chardonnay in Croatia, the best is produced in the cooler, continental regions. This chardonnay captures creaminess, complexity and minerality in one place."
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "IZ HRVATSKE KOLIJEVKE BIJELIH VINA...",
+          "en": "FROM THE CROATIAN CRADLE OF WHITE WINES..."
+        },
+        "items": [
+          { 
+            "name": "/ Trs, Chardonnay", 
+            "price": 36.00,
+            "priceGlass": 5.40,
+            "region": "Srijem, Hrvatska / Srijem, Croatia",
+            "description": {
+              "hr": "Chardonnay, najomiljenija sorta svijeta, našla je pogodno tlo i u Hrvatskoj. Ovaj chardonnay dolazi iz najistočnijeg vinogorja Hrvatske. Lagano vino, voćnih aroma i nježnijeg tijela. Lako teče i pogodno je uz razne gastronomske kombinacije.",
+              "en": "Chardonnay, the world's most loved variety, has found suitable soil in Croatia as well. This chardonnay comes from the easternmost vineyard in Croatia. A light wine, with fruity aromas and a softer body. It flows easily and is suitable with various gastronomic combinations."
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "NEMA MJESTA DO DOMA... ZADARSKA VINSKA SCENA",
+          "en": "THERE'S NO PLACE LIKE HOME ... THE ZADAR WINE SCENE"
+        },
+        "items": [
+          { 
+            "name": "/ Vinketa, Debit", 
+            "price": 35.00,
+            "priceGlass": 5.30,
+            "region": "Sjeverna Dalmacija, Hrvatska / Northern Dalmatia, Croatia",
+            "description": {
+              "hr": "Debit sjeverne Dalmacije duboko je ukorijenjena tradicija u proizvodnji dalmatinskih svježih vina. Debit, ove mlade i ambiciozne vinarije pravo je olakšanje za ljetne vruće dane, a svojom elegantnom stilistikom može se uklopiti u brojna jela.",
+              "en": "The debit of Northern Dalmatia is rooted in a deep tradition of Dalmatian fresh wines. The debit of this young and ambitious winery is a real relief on hot summer days, and with its elegant style it can be combined with many dishes."
+            }
+          },
+          { 
+            "name": "/ Bora, Maraština", 
+            "price": 37.00,
+            "priceGlass": 5.40,
+            "region": "Sjeverna Dalmacija, Hrvatska / Northern Dalmatia, Croatia",
+            "description": {
+              "hr": "Maraština, mlade lokalne vinarije, koja u posljednje vrijeme zaokuplja pozornost javnosti osvajanjem brojnih medalja na svjetskim natjecanjima. Napravljena u perfekcionističkoj maniri. Mami svježinom i elegancijom koju donose vjetrovi s Velebita u vinograde ove izvrsne vinarije.",
+              "en": "Maraština made by a young local winery, which has recently captured the public's attention by winning numerous medals at world competitions. The vintners are perfectionists. It tempts with freshness and elegance brought by the cool winds from our Velebit mountains."
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "DALMATINSKA OSVJEŽENJA ZA VRUĆE, LJETNE DANE I NOĆI...",
+          "en": "DALMATIAN REFRESHMENTS FOR HOT SUMMER DAYS AND NIGHTS..."
+        },
+        "items": [
+          { 
+            "name": "/ Grabovac, Kujundžuša", 
+            "price": 32.00,
+            "priceGlass": 5.00,
+            "region": "Dalmatinska zagora, Hrvatska / Dalmatian Zagora, Croatia",
+            "description": {
+              "hr": "Autohtona južno dalmatinska sorta, tipična za područje oko Inotskog. Elegantnu svježinu ovoj Kujundžiši donose hladni kontinentalni utjecaj s planine Biokovo, koji pogoduju vinografinima ovog kraja.",
+              "en": "Indigenous South Dalmatian varietal, typical for the area around Imotski. The cool continental influence from the Biokovo mountain, which favors the vineyards of this region, brings an elegant freshness to this Kujundžuša."
+            }
+          },
+          { 
+            "name": "/ Šain-Marelić, Sv. Ivan, Pošip Selekcija", 
+            "price": 53.00,
+            "region": "Južna Dalmacija, Hrvatska / Southern Dalmatia, Croatia",
+            "description": {
+              "hr": "Ovaj pošip rađen je sur lie metodom, koja je iz njega izvukla apsolutno najbolje karakteristike ove omiljene bijele sorte Jadrana. Toplo vino, punog tijela i aroma, maslačne raskošne pozadine, dolazi s najboljih pozicija legendarne Care, na otoku Korčula.",
+              "en": "This Pošip is made using the sur lie method, which extract the absolute best characteristics of this favorite white wine of the Adriatic. Warm, full-bodied and aromatic, with rich buttery undernotes. From the best locations of the legendary Cara, on the island of Korčula."
+            }
+          },
+          { 
+            "name": "/ Katić, Kujundžuša", 
+            "price": 35.00,
+            "priceGlass": 5.30,
+            "region": "Dalmatinska zagora, Hrvatska / Dalmatian Zagora, Croatia",
+            "description": {
+              "hr": "Vino s Inotskih visoravni, s predjela na 250 metara nadmorske visine. Tlo sačinjava zanimljiv pokrov sačinjen od nanosa oblutaka, pijeska i sive gline koji vinima daje jedinstvenu mineralnost. Vino je pravi hit među vinoljupcima.",
+              "en": "Wine from the Imotski highlands, an area at 250 meters above sea level. The soil includes an interesting mix of pebbles, sand and gray clay, which gives the wines a unique minerality. This wine is a real sensation among wine lovers."
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "VELIKA SVJETSKA VINSKA IMENA U ČAŠI...",
+          "en": "INTERNATIONAL GREATS IN A GLASS..."
+        },
+        "items": [
+          { 
+            "name": "/ Pieropan, Soave Classico", 
+            "price": 42.00,
+            "priceGlass": 6.20,
+            "region": "Veneto, Italy / Italija",
+            "description": {
+              "hr": "Kultni proizvođač vina s vulkanskih apelacija, a ujedno i prvi koji je imao Soave na vinskoj etiketi. Većinska sorta u ovom vinu je garganega, uz mali dodatak trebbiana. Vino je mineralno, egzotično voćno i iznimno pitko.",
+              "en": "Pieropan has cult status. A producer of wines from the volcanic appellations, and also the first to have Soave on a wine label. The main variety in this wine is garganega, with a small addition of trebbiano. This wine has mineral & exotic fruit notes and is extremely drinkable."
+            }
+          },
+          { 
+            "name": "/ Tinpot Hut, Sauvignon Blanc", 
+            "price": 48.00,
+            "priceGlass": 7.00,
+            "region": "Marlborough, New Zealand / Novi Zeland",
+            "description": {
+              "hr": "Sauvignon blanc ove vinarije, proslavio se prije nekoliko godina kada je postao najbolje ocijenjeni sauvignon blanc u dotadašnjoj povijesti Decantera sa 98/100 bodova. Mirisan, ekstraktan, iznimno herbalan, najbolji je primjerak novozelandskog sauvignona.",
+              "en": "Sauvignon blanc of this winery became famous a few years ago when it became the best-rated sauvignon blanc in Decanter's history with 98/100 points. Fragrant, extractive, extremely herbal, it is the best example of New Zealand sauvignon."
+            }
+          },
+          { 
+            "name": "/ Domaine de l'Enclos, Chablis, 1er Cru, Fourchaume", 
+            "price": 88.00,
+            "region": "Chablis, France / Francuska",
+            "description": {
+              "hr": "Domaine de l'Enclos jedno je od najuzbudljivijih imanja Chablisa. Vinograd Fourchaume nalazi se na desnoj obali rijeke Serein. Tlo mu je klasično kimmeridgiansko, bogato fosilima, što vinu daje izraženu mineralnost, a grožđe za ovaj čuveni nektar bere se ručno.",
+              "en": "Domaine de l'Enclos is one of Chablis' most exciting estates. The Fourchaume vineyard is located on the right bank of the Serein river. Its soil is classic Kimmeridgian, rich in fossils, which gives the wine a pronounced minerality, and the grapes for this famous nectar are harvested by hand."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "ORANGE VINA / ORANGE WINES",
+    "sections": [
+      {
+        "description": {
+          "hr": "JANTARNO BLAGO IZ ISTRE...",
+          "en": "AMBER TREASURES FROM ISTRIA..."
+        },
+        "items": [
+          { 
+            "name": "/ Veralda, Ambra", 
+            "price": 49.00,
+            "priceGlass": 7.30,
+            "region": "Istra, Hrvatska / Istria, Croatia",
+            "description": {
+              "hr": "Jantarno vino, s bijele pjeskovite istarske zemlje dobiveno maceracijom bobica istarske malvazije i odležavanjem na finom talogu. Vino je izvuklo maksimum okusa. Punog tijela i nevjerojatne ekstraktnosti, ne ostavlja nikog ravnodušnim.",
+              "en": "Amber wine, from the white sandy land of Istria, obtained by maceration of Istrian malvasia berries and aging on fine lees. The wine extracts maximum flavor. Full-bodied and incredibly extractive, it leaves no one indifferent."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "ROSÉ VINA / ROSÉ WINES",
+    "sections": [
+      {
+        "description": {
+          "hr": "SJEVERNA DALMACIJA... PROŠLOST I BUDUĆNOST HRVATSKIH ROSÉ-A",
+          "en": "NORTHERN DALMATIA... THE PAST AND FUTURE OF CROATIAN ROSÉS"
+        },
+        "items": [
+          { 
+            "name": "/ Fiolić, Rosé", 
+            "price": 39.00,
+            "priceGlass": 5.70,
+            "region": "Sjeverna Dalmacija, Hrvatska / Northern Dalmatia, Croatia",
+            "description": {
+              "hr": "Jedan od najboljih terroira za plavinu i grenache noir, upravo je onaj zadarski. Ovo ružičasto vino kombinacija je ove dvije sorte, a napravljeno je u provansalskoj maniri te mami mineralnošću, voćnim aromama i svježinom.",
+              "en": "One of the best terroirs for plavina wine and grenache noir is right here in Zadar. This rosé is a combination of these two varieties. This wine is made in the Provençal manner and entices with minerality, fruity aromas and freshness."
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "JUŽNA DALMACIJA + RUŽICASTA VINA = LJUBAV",
+          "en": "SOUTHERN DALMATIA + ROSÉ WINES = LOVE"
+        },
+        "items": [
+          { 
+            "name": "/ Volarević, Rosé, La Chic", 
+            "price": 46.00,
+            "region": "Južna Dalmacija, Hrvatska / Southern Dalmatia, Croatia",
+            "description": {
+              "hr": "Ružičasto vino dobiveno od kulture dalmatinske sorte plavac mali, iz vinograda najmladeg vinogorja Hrvatske, Komarne. Vino izražene voćnosti i svježine, potpomognuto razlikama između dnevnih i noćnih temperatura u vinogradima Komarne.",
+              "en": "Rosé wine obtained from the cult Dalmatian variety Plavac Mali, from the vineyards of the youngest vineyard in Croatia, Komarna. A wine with pronounced fruitiness and freshness, helped by the differences between day and night temperatures in the Komarna vineyards."
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "LA PROVENCE S'IL VOUS PLAÎT!",
+          "en": "LA PROVENCE S'IL VOUS PLAÎT!"
+        },
+        "items": [
+          { 
+            "name": "/ Caves d'Esclans, The Pale", 
+            "price": 53.00,
+            "priceGlass": 7.80,
+            "region": "Provence, France / Francuska",
+            "description": {
+              "hr": "Provansalski rosé-i najpoznatiji su trendseteri među ružičastim vinima, a upravo ovaj entry level biser dolazi iz jedne od najpoznatijih vinarija svijeta za ružičasta vina. Kombinacija je grenache-a, cinsault-a, rolle-a i syrah-a, te nudi bezvremensku eleganciju u čaši.",
+              "en": "Rosés du Provence are the best-known trendsetters among rosé wines, and this entry-level pearl comes from one of the most famous wineries in the world for pink wines. It is a combination of grenache, cinsault, rolle and syrah, and offers timeless elegance in a glass."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "CRVENA VINA / RED WINES",
+    "sections": [
+      {
+        "description": {
+          "hr": "NAŠA VINA = CRVENA VINA SJEVERNE DALMACIJE!",
+          "en": "OUR WINES = RED WINES OF NORTH DALMATIA!"
+        },
+        "items": [
+          { 
+            "name": "/ Vinketa, Plavina", 
+            "price": 35.00,
+            "priceGlass": 5.30,
+            "region": "Sjeverna Dalmacija, Hrvatska / Northern Dalmatia, Croatia",
+            "description": {
+              "hr": "Nekada zapostavljena sorta, danas poželjna i trendy. Plavina je sve traženija zbog sklonosti da proizvodi elegantna i ležerna vina, izvrsnog balansa. Jednostavno, ali i kompleksno, ova mlado vino oduševilo je i neka svjetski poznata imena vinskog novinarskog svijeta.",
+              "en": "Once a neglected variety, today desirable and trendy. Plavina is increasingly in demand due to its tendency to produce elegant and casual wines with excellent balance. Simple, but also complex, this young wine has delighted some world-famous names in the world of wine journalism."
+            }
+          },
+          { 
+            "name": "/ Škaulj, Tomislav", 
+            "price": 32.00,
+            "priceGlass": 5.00,
+            "region": "Sjeverna Dalmacija, Hrvatska / Northern Dalmatia, Croatia",
+            "description": {
+              "hr": "Najpoznatiji ekološki proizvođač zadarske regije. Vino Tomislav, ležerno je i pitko vino, sastavljeno od sorata koje su se fenomenalno snašle na zadarskom području: plavina, merlot, syrah i cabernet sauvignon.",
+              "en": "The most famous organic producer in the Zadar region. The wine Tomislav is a casual and drinkable wine, composed of grape varieties that have thrived in the Zadar area: plavina, merlot, syrah and cabernet sauvignon."
+            }
+          },
+          { 
+            "name": "/ Ante Sladić, Lasina", 
+            "price": 55.00,
+            "region": "Sjeverna Dalmacija, Hrvatska / Northern Dalmatia, Croatia",
+            "description": {
+              "hr": "Ova vinarija posvećena autohtonim sortama, specijalist je za ovu ležernu i pitku sortu; lasinu. Vinogradi s više nadmorske visine izloženi su neprekidnim strujanjima zraka te su se pobrinuli za pitkost ovog nadasve elegantnog vina.",
+              "en": "This winery, dedicated to indigenous varieties, is a specializes in the casual and drinkable varietal; Lasina. Vineyards at a higher altitude are exposed to continuous air currents and have taken care of the drinkability of this extremely elegant wine."
+            }
+          },
+          { 
+            "name": "/ Degarra, Bonterra", 
+            "price": 45.00,
+            "priceGlass": 6.70,
+            "region": "Sjeverna Dalmacija, Hrvatska / Northern Dalmatia, Croatia", 
+            "description": {
+              "hr": "Vinarija Degarra je tijekom godina postala sinonim za kvalitetu na zadarskom području. Vino je nastalo od sorti cabernet sauvignon, merlot i syrah. Bonterra je sinonim za vino s \"buona terra\" tj. dobre zemlje.",
+              "en": "Over the years, the Degarra winery has become synonymous with quality in the Zadar region. This wine is made from cabernet sauvignon, merlot and syrah varieties. Bonterra is a synonym for wine from \"buona terra\", i.e. good land."
+            }
+          },
+          { 
+            "name": "/ Bora, Svrdlovina", 
+            "price": 55.00,
+            "region": "Sjeverna Dalmacija, Hrvatska / Northern Dalmatia, Croatia",
+            "description": {
+              "hr": "Svrdlovina je autohtona sorta ovog kraja i ne može se naći nigdje drugdje osim u vinogradima zadarske regije. Elegantnog karaktera i aromatike crnog bobičastog voća, jedinstveno je iskustvo za nepce.",
+              "en": "Svrdlovina is an indigenous varietal of this region and cannot be found anywhere else except in the vineyards of Zadar. With an elegant character and aromas of black berries, it is a unique experience for the palate."
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "HRVATSKA JUŽNO DALMATINSKA VINA PO TRADICIJI ZOVEMO CRNIMA, A NE CRVENIMA...",
+          "en": "CROATIAN SOUTH DALMATIAN WINES ARE TRADITIONALLY CALLED BLACK, NOT RED..."
+        },
+        "items": [
+          { 
+            "name": "/ Rizman, Tribidrag", 
+            "price": 59.00,
+            "region": "Južna Dalmacija, Hrvatska / Southern Dalmatia, Croatia",
+            "description": {
+              "hr": "Slavna svjetska potraga za podrijetlom sorte zinfandel dokazala je hrvatsko podrijetlo sorte. Vinogradi ovog vina nalaze se u Komarni, jednoj od rijetkih regija svijeta koju čini više od 80% ekoloških proizvođača vina. Vino je smatrano jednim od najboljih primjera sorte u Hrvatskoj.",
+              "en": "The famous worldwide search for the origin of the Zinfandel varietal proved the Croatian origin of the varietal. The vineyards of this wine are located in Komarna, one of the rare regions in the world that consists of more than 80% organic wine producers. The wine is considered one of the best examples of zinfandel in Croatia."
+            }
+          },
+          { 
+            "name": "/ Volarević, Plavac Mali, Syrtis, Gold Edition", 
+            "price": 57.00,
+            "priceGlass": 8.20,
+            "region": "Južna Dalmacija, Hrvatska / Southern Dalmatia, Croatia",
+            "description": {
+              "hr": "Antičko ime Syrtis, ime je za Prud, mjesto odakle potječe ovo vino. Napravljeno od slavne hrvatske sorte plavac mali iz vinogorja Komarna. Iz ove ekološke regije stižu redom neka od najboljih vina Hrvatske pa tako je i ovo vino iznimno cijenjeno među vinskim znalcima.",
+              "en": "The ancient name Syrtis is the name for Prud, the place where this wine originates. Made from the famous Croatian varietal Plavac Mali from the Komarna vineyard. Some of the best wines in Croatia come from this ecological region, so this wine is highly valued among wine connoisseurs."
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "SVJEŽINA CRVENIH VINA ISTRE...",
+          "en": "THE FRESHNESS OF THE RED WINES OF ISTRIA..."
+        },
+        "items": [
+          { 
+            "name": "/ Legovina, Cabernet Franc, Matura", 
+            "price": 48.00,
+            "region": "Zapadna Istra, Hrvatska / Western Istria, Croatia",
+            "description": {
+              "hr": "Sadnice za ovo vino donesene su iz francuskog Chinona, doline Loire, gdje je ova sorta proslavljena svojim atraktivnim izričajem. Za istinsko uživanje u vinu pobrinula se crvenica u vinogradima, koja vinu daje iskonski mineralni karakter.",
+              "en": "The seedlings for this wine were brought from the French Chinon, Loire Valley, where this variety is celebrated for its attractive expression. The red wine in the vineyards, which gives the wine its primordial mineral character, ensures true enjoyment of this wine."
+            }
+          },
+          { 
+            "name": "/ Benvenuti, Teran, Livio Benvenuti", 
+            "price": 52.00,
+            "region": "Istra, Hrvatska / Istria, Croatia",
+            "description": {
+              "hr": "Veliko vino Istre, kulta proizvođača s najboljih položaja motovanskog kraja. Teran je autohtona sorta na području Istre, a daje vino iznimne gastronomske vrijednosti i vrhanskog balansa. Eno-gastronomski spektakl za vaša usta.",
+              "en": "The great wine of Istria, a cult producer from the best locations in the Motovun region. Teran is an autochthonous variety in the area of Istria, and it produces wine of exceptional gastronomic value and superb balance. An eno-gastronomic spectacle for your mouth."
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "KADA NAM FALE ITALIJA & FRANCUSKA...",
+          "en": "WHEN WE MISS ITALY & FRANCE..."
+        },
+        "items": [
+          { 
+            "name": "/ Fattoria Selvapiana, Chianti Rufina", 
+            "price": 41.00,
+            "priceGlass": 6.10,
+            "region": "Tuscany, Italy / Toskana, Italija",
+            "description": {
+              "hr": "Iz najmanje Chianti zone u Toskani, s drevnog imanja Selvapiana, dolazi ova toskanska delicija. Grožđe za ovaj Chianti čini sorta sangiovese, no tu su u malom omjeru i canaiolo, colorino te malvasia nera.",
+              "en": "From the smallest Chianti zone in Tuscany, from the ancient estate of Selvapiana comes this Tuscan delicacy. The main variety for this Chianti is sangiovese, but there are also small amounts of canaiolo, colorino and malvasia nera."
+            }
+          },
+          {
+            "name": "/ Chateau Larose Perganson, Cru Bourgeois, Haut Medoc",
+            "price": 82.00,
+            "region": "Bordeaux, Francuska / Bordeaux, France",
+            "description": {
+                "hr": "Istinsko cru bourgeois vino, s lijeve obale Bordeauxa što znači da je cabernet sauvignon njegova baza, uz dodatak merlota. Vinograd ove vinarije prvi je vinograd u Europi nagrađen titulom „Exemplary level“ u održivom razvoju. ",
+                "en": "A true cru bourgeois wine, from the left bank of Bordeaux, which means that cabernet sauvignon is its base, with the addition of merlot. The vineyard of this winery is the first vineyard in Europe awarded the title “Exemplary level” in sustainable development."
+              }
+          },
+          {
+            "name": "/ Fontodi, Chianti Classico, Gran Selezione, Vigna del Sorbo",
+            "price": 130.00,
+            "region": "Toskana, Italija  / Tuscany, Italy",
+            "description": {
+                "hr": "Jedan od najznačajnijih proizvođača. Vinogradi su im smješteni u tvz. ‘conca d’oro’, tj. zlatnom bazenu u Panzanu, samom srcu Chianti Classico zone. Vinogradi su njegovani po ekološkim uzusima vinogradarenja. Grožđe dolazi od 60-ak godina starih loza. Vino za istinske vinske znalce.",
+                "en": "One of the most important producers. Their vineyards are located in the so-called ‘conca d’oro’, i.e. the golden basin in Panzano, the very heart of the Chianti Classico zone. The vineyards are nurtured according to the ecological principles of viticulture. The grapes come from 60-year-old vines. Wine for true wine connoisseurs."
+              }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "DESERTNA VINA / DESSERT WINES",
+    "sections": [
+      {
+        "description": {
+          "hr": "SLATKO I CVIJETNO IZ ISTRE...",
+          "en": "SWEET AND FLORAL FROM ISTRIA... "
+        },
+        "items": [
+          { 
+            "name": "/ Prelac, Muškat Momjanski (0.5 L)", 
+            "price": 37.00,
+            "priceGlass": 8.00,
+            "region": "Istra, Hrvatska / Istria, Croatia",
+            "description": {
+              "hr": "Poluslatko vino sorte muškat bijeli, tradicionalnog naziva; moscato di momiano, sa zaštićene apelacije u Istri. Da bi se proizveo momjanski muškat vinogradi moraju biti na flišnom tlu, što ograničava područje za ovo iznimno i mirisno vino, izvrsnog istarskog proizvođača.",
+              "en": "Semi-sweet wine of the Muscat white variety, with a traditional name; moscato di momiano, from a protected appellation in Istria. In order to produce Momjan Muscat, the vineyards must be on flysch soil, which limits the area for this exceptional and fragrant wine, from an excellent Istrian producer. "
+            }
+          }
+        ]
+      },
+      {
+        "description": {
+          "hr": "DUHOVI PROŠLOSTI SLATKE DALMACIJE...",
+          "en": "SWEET GHOST OF DALMATIA’S PAST..."
+        },
+        "items": [
+          { 
+            "name": "/ Sladić, Deorum, Prošek (0.5 L)", 
+            "price": 48.00,
+            "priceGlass": 9.60,
+            "region": "Sjeverna Dalmacija, Hrvatska / Northern Dalmatia, Croatia",
+            "description": {
+              "hr": "Slatko vino, jednog od najpoznatijih proizvođača Prošeka u Dalmaciji. Ekstraktnost ovog slatkog dalmatinskog nektara postiže se apassimento metodom, koja se već stotinama.",
+              "en": "Sweet wine, one of the most famous producers of Prošek in Dalmatia. The extractability of this sweet Dalmatian nectar is achieved by the apassimento method."
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
