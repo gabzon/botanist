@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import brothers from '../images/brothers.jpeg';
+import cooking from '../images/cooking.jpeg';
 ---
 <Layout>
     <div class="px-6 py-32 lg:px-8 relative">
@@ -32,22 +35,21 @@ import Layout from '../layouts/Layout.astro';
             <p>Lujo, the youngest brother studied Art history to satisfy his desire to understand “creation” in art, which he later translated into culinary creativity.</p>
         </div>
         <figure class="mt-16">
-            <img class="aspect-video rounded-xl bg-gray-50 object-cover" src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Three brothers standing together in a restaurant kitchen">
+            <Image src={brothers} alt="The botanists brothers standing together in a restaurant" class="aspect-video rounded-xl bg-gray-50 object-cover" loading="eager"/>
             <figcaption class="mt-4 flex gap-x-2 text-sm/6 text-gray-300">
             <svg class="mt-0.5 size-5 flex-none text-gray-300" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
                 <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
             </svg>
-            Brothers blablabla
+            The Botanist brothers
             </figcaption>
         </figure>
         <div class="mt-16 max-w-2xl text-gray-200 space-y-6">
-            <h2 class="text-pretty text-3xl font-semibold tracking-tight text-gray-100">Everything you need to get up and running</h2>
             <p>We Dalmatians perceive growing up in Dalmatia through tourism and hospitality industry, because those are the most indigneous offers of our area. As the old saying of our dear local, Enio Meštrović  says, “the most successful people are those with an empty refrigerator in childhood“. So after working for a couple of after-school seasons for other employers, we came up with many ways to start our own business, and finally in 2012 we encouraged ourselves with our hands and borrowed money to build ‘Beach House Fratelli“ which still operates today on the main beach in Petrčane.  After that, we tried other business ventures, some really successful, and some less, but all this gave us motivation to realize our dreams and not to be discouraged along the way. </p>
             <p>Parallel with our businesses, we also developed our musical talents. Duje participated and made it to the finals of the popular show ‘Croatia’s Got Talent’. Together with Lujo, he left valuable and notable roles in “Klapa Kožino“ which won all the awards that could be won in traditional acapella singing. (*Klapa is a group of five to eight singers who sing acapella, without a conductor and musical instruments. It consists of a first tenor, a second tenor and a bass (themes about klapa songs are sea, wine, love and family). Klapa promotes the traditional way of singing specific to Dalmatia and In 2012 klapa was inscribed in UNESCO Intangible Cultural Heritage of Humanity.</p>
             <p>One summer we were all together at the birth house when Vice broke the news that he had become a vegan. Even though our father was declared a freak in small community of Petrčane in the nineties, after he read in a doctoral dissertation that red meat is not the healthiest, especially in large quantities, we still teased Vice and outsmarted him for days, claiming that it was just one of the fashionable nonsense he fell for.</p>
             <p>However, even though we are a family that loves endless debates and conflicts, no matter how much we tried to argue the point of eating meat, Vice was the winner. In the moral, health, economical, ethical, ecological sense, his arguments were unbeatable. We continued to attack him, but as the legend says, “our blades became dull, and our arms and legs faltered“ in front of Vice’s convincing arguments, so we had nothing left but to watch a few documentaries recommended by our brother.</p>
             <figure class="mt-16">
-                <img class="aspect-video rounded-xl bg-gray-50 object-cover" src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf" alt="Three brothers standing together in a restaurant kitchen">
+                <Image src={cooking} alt="The art of cooking" class="aspect-video rounded-xl bg-gray-50 object-cover" loading="eager"/>
                 <figcaption class="mt-4 flex gap-x-2 text-sm/6 text-gray-300">
                 <svg class="mt-0.5 size-5 flex-none text-gray-300" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
                     <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
@@ -64,10 +66,6 @@ import Layout from '../layouts/Layout.astro';
                 <blockquote class="font-semibold text-satin-gold">
                   <p>“All modern methods like confit, sous vide methods, and slow cooking methods were practiced every day, so the chickpeas stew would be cooked for 8 hours!”</p>
                 </blockquote>
-                <figcaption class="mt-6 flex gap-x-4">
-                  <img class="size-6 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                  <div class="text-sm/6"><strong class="font-semibold text-gray-100">Maria</strong> – Master Chef</div>
-                </figcaption>
             </figure>
             <p>Grandma would get up early and prepare all the ingredients, she would put the onion in olive oil and stew it on the lowest heat until it was cooked. Then she would add all the other dry and wet ingredients and let it simmer until she got back from Sunday mass. When she came back and checked the flavors, she would finish the slow cooking process, and a delicious lunch would be served. We can only say the best about the perfection of her dishes, and we remember them with great nostalgia. </p>
             <p>Our grandparents gave us the path that we are walking today, and we don’t want to give up under any circumstances. We want to present the Mediterranean and Dalmatia in the best light and show you what we can do in terms of combining top flavors at the plate. Our understanding of ingredients is that if they are fresh and tasty, then the dish composed from it will also be delicious</p>

@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+import image from '../images/franchise.jpg';
+---
+<div class="relative bg-gold">
+    <div class="relative h-80 overflow-hidden bg-gold md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
+      <Image src={image} alt="The Botanist franchise" class="size-full object-cover" loading="eager"/>
+    </div>
+    <div class="relative mx-auto max-w-7xl sm:px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+      <div class="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32">
+        <h2 class="text-base/7 font-semibold text-black-olive">The Botanist family farm</h2>
+        <p class="mt-2 text-4xl font-semibold tracking-tight text-true-black sm:text-5xl">From Our Fields to Your Fork</p>
+        <p class="mt-6 text-base/7 text-black-olive">
+            Since day one, we’ve been committed to sourcing everything we can from local, organic farms. Now, we’re taking that commitment even further.
+        </p>
+        <p class="mt-6 text-base/7 text-black-olive">Starting this season, our very own Botanist Farm (OPG) will supply the restaurant with organic, ethical, and delicious produce—grown by us, for you. It’s the next step in our mission to create truly sustainable, plant-based cuisine.</p>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+

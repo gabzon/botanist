@@ -1,16 +1,16 @@
 ---
 import '../styles/global.css';
-
+import { getLangFromUrl } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
 interface Props {
 	title?: string;
 	description?: string;
 }
-
 const { title = 'The Botanist | Vegan Restaurant in Zadar, Croatia', description = 'The Botanist is a vegan restaurant in Zadar, Croatia, inspired by Dalmatia\'s rich culinary heritage of herbs, spices, and fresh local produce.' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />

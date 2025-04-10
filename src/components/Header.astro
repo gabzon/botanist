@@ -2,8 +2,13 @@
 import { Image } from 'astro:assets';
 import logo from '../images/botanist.png';
 import Button from './Button.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { languages } from '../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const {
-  info = {}
+  info = {},
 } = Astro.props;
 ---
 
@@ -13,25 +18,50 @@ const {
 				<!-- Logo -->
 			<a href="/" class="flex items-center">
 				<Image src={logo} alt="The Botanist logo" class="w-32 object-cover" loading="eager"/>
-				<!-- <span class="text-2xl font-bold text-white hover:text-gold">The Botanist</span> -->
 			</a>
 
 			<!-- Desktop Navigation -->
 			<nav class="hidden md:flex space-x-8">
-				<a href="#hero" class="text-slate-200 hover:text-gold font-medium transition-colors">Home</a>
-				<a href="#about" class="text-slate-200 hover:text-gold font-medium transition-colors">About</a>
-				<a href="#menu" class="text-slate-200 hover:text-gold font-medium transition-colors">Menu</a>
-				<a href="#gallery" class="text-slate-200 hover:text-gold font-medium transition-colors">Gallery</a>
-				<a href="#contact" class="text-slate-200 hover:text-gold font-medium transition-colors">Contact</a>
+				<a href="#hero" class="text-slate-200 hover:text-gold font-medium transition-colors">{t('nav.home')}</a>
+				<a href="#about" class="text-slate-200 hover:text-gold font-medium transition-colors">{t('nav.about')}</a>
+				<a href="#menu" class="text-slate-200 hover:text-gold font-medium transition-colors">{t('nav.menu')}</a>
+				<a href="#gallery" class="text-slate-200 hover:text-gold font-medium transition-colors">{t('nav.gallery')}</a>
+				<a href="#contact" class="text-slate-200 hover:text-gold font-medium transition-colors">{t('nav.contact')}</a>
 			</nav>
 
 			<!-- Reservation Button (Desktop) -->
-			<div class="hidden md:block">
+			<div class="hidden md:flex items-center space-x-4">
+				<!-- Language Switcher -->
+				<div class="relative" x-data="{ open: false }">
+					<button @click="open = !open" class="flex items-center text-slate-200 hover:text-gold transition-colors">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+							<path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z"/>
+							<path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31"/>
+						</svg>
+						<span class="ml-1 uppercase text-sm">{lang}</span>
+					</button>
+					
+					<!-- Dropdown Menu -->
+					<div x-show="open" 
+						@click.away="open = false"
+						x-transition:enter="transition ease-out duration-100" 
+						x-transition:enter-start="opacity-0 scale-95" 
+						x-transition:enter-end="opacity-100 scale-100" 
+						x-transition:leave="transition ease-in duration-75" 
+						x-transition:leave-start="opacity-100 scale-100" 
+						x-transition:leave-end="opacity-0 scale-95"
+						class="absolute right-0 mt-2 w-24 bg-true-black border border-gray-800 rounded-md shadow-lg z-50"
+						style="display: none;">
+						<a href="/en" class="block px-4 py-2 text-sm text-slate-200 hover:text-gold hover:bg-gray-900">English</a>
+						<a href="/hr" class="block px-4 py-2 text-sm text-slate-200 hover:text-gold hover:bg-gray-900">Hrvatski</a>
+					</div>
+				</div>
+				
 				<Button url={`tel:${info.phone}`} style="primary">
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" viewBox="0 0 20 20" fill="currentColor">
 					  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
 					</svg>
-					<span>Book a Table</span>
+					<span>{t('button.bookTable')}</span>
 				</Button>
 			</div>
 
@@ -65,18 +95,26 @@ const {
 		style="display: none;"
 	>
 		<nav class="flex flex-col space-y-4">
-			<a href="#hero" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">Home</a>
-			<a href="#about" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">About</a>
-			<a href="#menu" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">Menu</a>
-			<a href="#gallery" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">Gallery</a>
-			<a href="#contact" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">Contact</a>
+			<a href="#hero" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">{t('nav.home')}</a>
+			<a href="#about" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">{t('nav.about')}</a>
+			<a href="#menu" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">{t('nav.menu')}</a>
+			<a href="#gallery" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">{t('nav.gallery')}</a>
+			<a href="#contact" class="text-slate-200 hover:text-gold font-medium transition-colors py-2">{t('nav.contact')}</a>
+			
+			<!-- Mobile Language Switcher -->
+			<div class="flex justify-center space-x-4 py-2">
+				{Object.entries(languages).map(([lang, label]) => (
+					  <a href={`/${lang}/`} class="flex items-center text-slate-200 hover:text-gold transition-colors px-3 py-1 border border-gray-800 rounded">{label}</a>
+				  ))}
+			</div>
+			
 			<Button url={`tel:${info.phone}`} style="primary">
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" viewBox="0 0 20 20" fill="currentColor">
 					<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
 				</svg>
-				<span>Book a Table</span>
+				<span>{t('button.bookTable')}</span>
 			</Button>
-			<p class="text-center italic text-sm text-satin-gold">Call us 12-22h to book</p>
+			<p class="text-center italic text-sm text-satin-gold">{t('button.callToBook')}</p>
 		</nav>
 	</div>
 

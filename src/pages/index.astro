@@ -2,12 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import Consulting from '../components/Consulting.astro';
 import About from '../components/About.astro';
+import Farm from '../components/Farm.astro';
 import Menu from '../components/Menu.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
 import Gallery from '../components/Gallery.astro';
+import Contact from '../components/Contact.astro';
+import Consulting from '../components/Consulting.astro';
+import Footer from '../components/Footer.astro';
 
 const info = {
   phone: '+385 92 423 2296',
@@ -28,10 +29,11 @@ const info = {
   <main>
     <Hero info={info}/>
     <About />
-    <Consulting />
+    <Farm />
     <Menu info={info}/>
     <Gallery />
     <Contact info={info}/>
+    <Consulting info={info}/>
   </main>
   <Footer info={info}/>
 </Layout>

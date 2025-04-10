@@ -3,10 +3,13 @@ import { Image } from 'astro:assets';
 import hero from '../images/hero.jpg';
 import logo from '../images/botanist-slogan.png';
 import Button from './Button.astro';
+
 const {
   info = {}
 } = Astro.props;
 ---
+
+
 
 
 <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -25,7 +28,7 @@ const {
     </h1>
     
     <p class="text-white text-lg md:text-xl max-w-2xl mx-auto mb-8 drop-shadow-md">
-      Inspired by Dalmatia's rich culinary heritage of herbs, spices, and fresh local produce
+      <!-- {t.subtitle} -->
     </p>
     
     <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
@@ -38,7 +41,7 @@ const {
           <span>Book a Table</span>
         </Button>
     </div>
-    <span class="block italic text-sm mt-2 text-satin-gold">Call us 12–22h to book</span>
+    <span class="block italic text-sm mt-2 text-satin-gold">call us between 12-22h to reserve your table</span>
     
 
     <!-- Rating Badge -->
