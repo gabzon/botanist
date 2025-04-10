@@ -2,24 +2,36 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import Consulting from '../components/Consulting.astro';
 import About from '../components/About.astro';
 import Menu from '../components/Menu.astro';
-import Testimonials from '../components/Testimonials.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import Gallery from '../components/Gallery.astro';
-const phone = '+385924232296';
+
+const info = {
+  phone: '+385 92 423 2296',
+  email: 'infobotanist@gmail.com',
+  address: 'Ul. Mihovila Pavlinovića 4',
+  city: '23000 Zadar, Croatia',
+  facebook: 'https://www.facebook.com/botanistzadar',
+  instagram: 'https://www.instagram.com/botanist_zadar',
+  schedule: {
+    daily: '13:00 - 22:00',
+    wednesday: 'Closed',
+  }
+}
 ---
 
 <Layout>
-  <Header phone={phone}/>
+  <Header info={info}/>
   <main>
-    <Hero phone={phone}/>
+    <Hero info={info}/>
     <About />
-    <Menu phone={phone}/>
-    <!-- <Testimonials /> -->
+    <Consulting />
+    <Menu info={info}/>
     <Gallery />
-    <Contact />
+    <Contact info={info}/>
   </main>
-  <Footer />
+  <Footer info={info}/>
 </Layout>

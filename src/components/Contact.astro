@@ -1,8 +1,8 @@
 ---
+const {info = {}} = Astro.props;
 ---
-
-<section id="contact" class="section bg-true-black py-24">
-  <div class="container">
+<section id="contact" class="py-16 md:py-24 bg-true-black">
+  <div class="mx-auto px-4 max-w-7xl">
     <!-- Section Header -->
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl text-gold mb-4">Contact Us</h2>
@@ -25,8 +25,8 @@
             </div>
             <div>
               <h4 class="font-medium text-gold mb-1">Address</h4>
-              <p>Ul. Mihovila Pavlinovića 4</p>
-              <p>23000 Zadar, Croatia</p>
+              <p>{info.address}</p>
+              <p>{info.city}</p>
             </div>
           </div>
           
@@ -39,7 +39,7 @@
             <div>
               <h4 class="font-medium text-gold mb-1">Phone</h4>
               <p>
-                <a href="tel:+385924232296" class="hover:text-satin-gold transition-colors">+385 92 423 2296</a>
+                <a href={`tel:${info.phone}`} class="hover:text-satin-gold transition-colors">{info.phone}</a>
               </p>
             </div>
           </div>
@@ -53,7 +53,7 @@
             <div>
               <h4 class="font-medium mb-1 text-gold">Email</h4>
               <p class="text-gray-200">
-                <a href="mailto:Infobotanist@gmail.com" class="hover:text-satin-gold transition-colors">Infobotanist@gmail.com</a>
+                <a href={`mailto:${info.email}`} class="hover:text-satin-gold transition-colors">{info.email}</a>
               </p>
             </div>
           </div>
@@ -66,9 +66,59 @@
             </div>
             <div>
               <h4 class="font-medium mb-1 text-gold">Opening Hours</h4>
-              <p class="text-white">Monday - Friday: 12:00 - 22:00</p>
-              <p class="text-white">Saturday: 12:00 - 23:00</p>
-              <p class="text-white">Sunday: 12:00 - 22:00</p>
+              {info.schedule && (
+                <div class="text-sm grid grid-cols-2 gap-x-4 mt-1">
+                  {info.schedule.daily && (
+                    <>
+                      <p class="text-white text-left">Daily:</p>
+                      <p class="text-white text-right">{info.schedule.daily}</p>
+                    </>
+                  )}
+                  {info.schedule.monday && (
+                    <>
+                      <p class="text-white text-left">Monday:</p>
+                      <p class="text-white text-right">{info.schedule.monday}</p>
+                    </>
+                  )}
+                  {info.schedule.tuesday && (
+                    <>
+                      <p class="text-white text-left">Tuesday:</p>
+                      <p class="text-white text-right">{info.schedule.tuesday}</p>
+                    </>
+                  )}
+                  {info.schedule.wednesday && (
+                    <>
+                      <p class="text-white text-left">Wednesday:</p>
+                      <p class="text-white text-right">{info.schedule.wednesday}</p>
+                    </>
+                  )}
+                  {info.schedule.thursday && (
+                    <>
+                      <p class="text-white text-left">Thursday:</p>
+                      <p class="text-white text-right">{info.schedule.thursday}</p>
+                    </>
+                  )}
+                  {info.schedule.friday && (
+                    <>
+                      <p class="text-white text-left">Friday:</p>
+                      <p class="text-white text-right">{info.schedule.friday}</p>
+                    </>
+                  )}
+                  {info.schedule.saturday && (
+                    <>
+                      <p class="text-white text-left">Saturday:</p>
+                      <p class="text-white text-right">{info.schedule.saturday}</p>
+                    </>
+                  )}
+                  {info.schedule.sunday && (
+                    <>
+                      <p class="text-white text-left">Sunday:</p>
+                      <p class="text-white text-right">{info.schedule.sunday}</p>
+                    </>
+                  )}
+                </div>
+              )}
+              <p class="mt-1 italic text-sm text-satin-gold">(kitchen closes at 21h)</p>
             </div>
           </div>
         </div>
@@ -88,7 +138,7 @@
             style="border:0;" 
             allowfullscreen="" 
             loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
+            referrer-policy="no-referer-when-downgrade"
           ></iframe>
         </div>
       </div>

@@ -4,8 +4,8 @@ import story from '../images/story.jpg';
 import Button from './Button.astro';
 ---
 
-<section id="about" class="section bg-true-black">
-  	<div class="container">
+<section id="about" class="py-16 md:py-24 bg-true-black">
+  	<div class="mx-auto px-4 max-w-7xl sm:px-6 lg:px-8">
     	<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       	<!-- About Content -->
       		<div>
@@ -23,7 +23,7 @@ import Button from './Button.astro';
         
 				<div class="flex flex-col sm:flex-row gap-4">
 					<Button url="#menu" text="Explore Our Menu" style="primary" />
-					<Button url="#" text="Learn More" style="secondary" />          
+					<Button url={import.meta.env.BASE_URL + '/about'} text="Learn More" style="secondary" />          
 				</div>
 
         		<div class="grid grid-cols-2 gap-6 pt-14">
