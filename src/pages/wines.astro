@@ -62,9 +62,9 @@ import wines from '../data/wines.json';
                           <div class="text-right">
                             <span class="text-gold font-medium">
                               {wine.priceGlass ? 
-                                <span class="inline-flex items-center justify-end">
+                                <span class="inline-flex items-center justify-end whitespace-nowrap">
                                   €{wine.price.toFixed(2)} / 
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="h-5 w-5" viewBox="0 0 24 24" class="mx-1"><path fill="currentColor" d="M8.692 20v-1H11.5v-4.523q-2.15-.33-3.383-1.875T6.884 9V4h10.232v5q0 2.058-1.233 3.602T12.5 14.477V19h2.808v1zM7.884 8.5h8.231V5h-8.23z"/></svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="h-5 w-5 mx-1" viewBox="0 0 24 24"><path fill="currentColor" d="M8.692 20v-1H11.5v-4.523q-2.15-.33-3.383-1.875T6.884 9V4h10.232v5q0 2.058-1.233 3.602T12.5 14.477V19h2.808v1zM7.884 8.5h8.231V5h-8.23z"/></svg>
                                   €{wine.priceGlass.toFixed(2)}
                                 </span> 
                                 : 
@@ -94,7 +94,7 @@ import wines from '../data/wines.json';
 
         <div class="text-center mt-16">
           <p class="mb-6 text-satin-gold italic">All wines are available by the bottle. Selected wines are available by the glass.</p>
-          <div class="flex justify-center gap-4">
+          <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
             <Button url={import.meta.env.BASE_URL || "/"} text="Back to Home" style="primary" />
             <Button url={import.meta.env.BASE_URL + '/beverages'} text="View Beverages" style="secondary" />
           </div>

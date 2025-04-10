@@ -66,58 +66,20 @@ const {info = {}} = Astro.props;
             </div>
             <div>
               <h4 class="font-medium mb-1 text-gold">Opening Hours</h4>
-              {info.schedule && (
-                <div class="text-sm grid grid-cols-2 gap-x-4 mt-1">
-                  {info.schedule.daily && (
-                    <>
-                      <p class="text-white text-left">Daily:</p>
-                      <p class="text-white text-right">{info.schedule.daily}</p>
-                    </>
-                  )}
-                  {info.schedule.monday && (
-                    <>
-                      <p class="text-white text-left">Monday:</p>
-                      <p class="text-white text-right">{info.schedule.monday}</p>
-                    </>
-                  )}
-                  {info.schedule.tuesday && (
-                    <>
-                      <p class="text-white text-left">Tuesday:</p>
-                      <p class="text-white text-right">{info.schedule.tuesday}</p>
-                    </>
-                  )}
-                  {info.schedule.wednesday && (
-                    <>
-                      <p class="text-white text-left">Wednesday:</p>
-                      <p class="text-white text-right">{info.schedule.wednesday}</p>
-                    </>
-                  )}
-                  {info.schedule.thursday && (
-                    <>
-                      <p class="text-white text-left">Thursday:</p>
-                      <p class="text-white text-right">{info.schedule.thursday}</p>
-                    </>
-                  )}
-                  {info.schedule.friday && (
-                    <>
-                      <p class="text-white text-left">Friday:</p>
-                      <p class="text-white text-right">{info.schedule.friday}</p>
-                    </>
-                  )}
-                  {info.schedule.saturday && (
-                    <>
-                      <p class="text-white text-left">Saturday:</p>
-                      <p class="text-white text-right">{info.schedule.saturday}</p>
-                    </>
-                  )}
-                  {info.schedule.sunday && (
-                    <>
-                      <p class="text-white text-left">Sunday:</p>
-                      <p class="text-white text-right">{info.schedule.sunday}</p>
-                    </>
-                  )}
-                </div>
-              )}
+              <ul class="space-y-2">
+                {info.schedule && info.schedule.daily && (
+                  <li class="text-sm flex justify-between">
+                    <span>Daily</span>
+                    <span>{info.schedule.daily}</span>
+                  </li>
+                )}
+                {info.schedule && info.schedule.wednesday && (
+                  <li class="text-sm flex justify-between">
+                    <span>Wednesday</span>
+                    <span>{info.schedule.wednesday}</span>
+                  </li>
+                )}
+              </ul>
               <p class="mt-1 italic text-sm text-satin-gold">(kitchen closes at 21h)</p>
             </div>
           </div>
