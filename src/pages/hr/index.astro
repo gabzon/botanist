@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Farm from '../../components/Farm.astro';
+import Menu from '../../components/Menu.astro';
+import Gallery from '../../components/Gallery.astro';
+import Contact from '../../components/Contact.astro';
+import Consulting from '../../components/Consulting.astro';
+import Footer from '../../components/Footer.astro';
+
+const info = {
+  phone: '+385 92 423 2296',
+  email: 'infobotanist@gmail.com',
+  address: 'Ul. Mihovila Pavlinovića 4',
+  city: '23000 Zadar, Croatia',
+  facebook: 'https://www.facebook.com/botanistzadar',
+  instagram: 'https://www.instagram.com/botanist_zadar',
+  schedule: {
+    daily: '13:00 - 22:00',
+  }
+};
+---
+
+<Layout>  
+  <Header info={info} />
+  <Hero info={info}>
+    Inspiriran bogatom kulinarskom baštinom Dalmatinaca začinskog bilja, začina i svježih lokalnih proizvoda.
+  </Hero>
+  <About />
+  <Farm />
+  <Menu />
+  <Gallery />
+  <Contact info={info} />
+  <Consulting />
+  <Footer info={info} />
+</Layout>

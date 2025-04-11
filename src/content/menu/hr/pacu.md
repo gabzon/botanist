@@ -1,8 +1,8 @@
 ---
 name: "/ PACU"
-description: "Baked and fresh cauliflower and pickled beetroot salad on sage and cashew cream with pomegranate and crispy sage leaves"
+description: "Salata od cvjetače i ukiseljene cikle na kremi od kadulje i indijskog oraščića s narom i hrskavim listićima kadulje"
 price: 9.70
 category: "SALADS"
-tags: ["vegetarian", "gluten-free"]
+tags: ["vegetarian"]
 sortOrder: 1
 ---

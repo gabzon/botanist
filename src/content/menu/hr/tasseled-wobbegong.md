@@ -1,7 +1,7 @@
 ---
 name: "/ TASSELED WOBBEGONG"
-description: "Traditional Dalmatian oyster mushroom brudet with olives, capers, almonds and dried figs on firm polenta"
-price: 24.20
+description: "Tradicionalni dalmatinski brudet od bukovača s maslinama i suhim smokvama na čvrstoj aromatiziranoj palenti"
+price: 21.20
 category: "MAIN COURSES"
-tags: ["vegan", "traditional"]
+tags: ["vegetarian"]
 ---

@@ -1,8 +1,8 @@
 ---
 name: "/ STAR-NOSED MOLE"
-description: "Cooked broad beans and potato appetizer, with potato and beet chips, hemp seeds, fresh cucumber and perfume of lemon, thyme, oregano and rosemary"
+description: "\"Bob lešo s krumpirom\", čips od krompira i cikle, sa sjemenkama konoplje, svježim krastavacem te parfemom od limuna, timijana, origana i ružmarina"
 price: 12.30
 category: "APPETIZERS"
-tags: ["vegetarian", "gluten-free"]
+tags: ["vegetarian"]
 sortOrder: 31
 ---

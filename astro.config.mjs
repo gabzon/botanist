@@ -7,7 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: 'https://gabzon.github.io',
   base: '/botanist', // Add the leading slash for GitHub Pages
-  trailingSlash: "never",
+  // trailingSlash: "never",
   output: 'static',
   vite: {
     plugins: [tailwindcss()],
@@ -15,5 +15,8 @@ export default defineConfig({
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'hr'],
-  },
+    routing: {
+      prefixDefaultLocale: true
+    }
+  }
 });

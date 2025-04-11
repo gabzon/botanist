@@ -1,7 +1,12 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang as 'en' | 'hr');
 import { Image } from 'astro:assets';
 import image from '../images/gallery/logo.jpg';
-const { info={} } = Astro.props;
+const { 
+  info = {} 
+} = Astro.props;
 ---
 <div class="relative bg-gold">
     <div class="relative h-80 overflow-hidden bg-gold md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
@@ -9,16 +14,16 @@ const { info={} } = Astro.props;
     </div>
     <div class="relative mx-auto max-w-7xl sm:px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
       <div class="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32">
-        <h2 class="text-base/7 font-semibold text-black-olive">Franchising & Consultation Services</h2>
-        <p class="mt-2 text-4xl font-semibold tracking-tight text-true-black sm:text-5xl">We’re here to help</p>
+        <h2 class="text-base/7 font-semibold text-black-olive">{t('heading','franchise')}</h2>
+        <p class="mt-2 text-4xl font-semibold tracking-tight text-true-black sm:text-5xl">{t('title','franchise')}</p>
         <p class="mt-6 text-base/7 text-black-olive">
-          Do you wish The Botanist Restaurant was in your town too? Together we can make that happen! Please email us to discuss franchise opportunities.
+          {t('description','franchise')}
         </p>
-        <p class="mt-6 text-base/7 text-black-olive">We also offer bar and kitchen consultation services</p>
+        <p class="mt-6 text-base/7 text-black-olive">{t('services','franchise')}</p>
         <div class="mt-8">
-          <a href={`mailto:${info.email}`} class="inline-flex rounded-md bg-black-olive px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-golden-brown focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Email us</a>
+          <a href={`mailto:${info.email}`} class="inline-flex rounded-md bg-black-olive px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-golden-brown focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white">{t('email','franchise')}</a>
         </div>
       </div>
     </div>
-  </div>
+</div>
   

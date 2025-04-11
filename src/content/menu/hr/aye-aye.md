@@ -1,6 +1,6 @@
 ---
 name: "/ AYE-AYE"
-description: "Burger with truffle or lemon and basil sauce, cheddar cheese, breaded onion rings, pickled cucumbers, tomato, salad, fried potatoes and roasted pepper sauce"
+description: "Burger s umakom od tartufa ili limuna i bosiljka, cheddar sirom, paniranim kolutima luka, rajčicom, salatom, prženim krumpirom i umakom od pečene paprike"
 price: 16.70
 category: "BURGERS"
 tags: ["vegetarian"]

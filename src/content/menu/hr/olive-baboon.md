@@ -1,7 +1,7 @@
 ---
 name: "/ OLIVE BABOON"
-description: "Pasta with bolognese sauce"
+description: "Pašta s bolognese umakom"
 price: 14.10
 category: "KIDS MENU"
-tags: ["kid-friendly"]
+tags: ["vegetarian"]
 ---

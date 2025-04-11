@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/Button.astro';
+import wines from '../../data/wines.json';
+---
+
+<Layout title="Wine List | Botanist">
+  <main class="bg-true-black text-white min-h-screen">
+    <a href={import.meta.env.BASE_URL || '/'} class="absolute top-8 left-6 lg:left-8 flex items-center text-gold hover:text-satin-gold transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+      </svg>
+      <span>Back to Home</span>
+    </a>
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h1 class="text-4xl md:text-5xl font-bold text-gold mb-4">Vinska karta /Wine List</h1>
+          <h2 class="py-2">Certifirana Organska Vina/Certified Organic Wines</h2>
+          <p class="max-w-2xl mx-auto text-slate-200 mb-6">
+            Explore our carefully curated selection of wines from Croatia and around the world, featuring local varietals and international classics.
+          </p>
+          <a href={import.meta.env.BASE_URL + '/en/beverages'} class="px-4 py-2 rounded-md font-medium transition-colors duration-300 border border-gold text-gold hover:bg-gold hover:text-true-black">
+            View Beverages
+          </a>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          {wines.map((category) => (
+            <div class="mb-20">
+              <h2 class="text-2xl font-semibold text-gold border-b border-gold pb-2 mb-6">{category.name}</h2>
+              
+              {category.sections.map((section) => (
+                <div class="">
+                  {/* {section.description && (section.description.hr || section.description.en) && (
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                      {section.description.hr && (
+                        <p class="text-slate-200 italic">{section.description.hr}</p>
+                      )}
+                      {section.description.en && (
+                        <p class="text-slate-200 italic">{section.description.en}</p>
+                      )}
+                    </div>
+                  )} */}
+                  
+                  <div class="grid gap-y-2">
+                    {section.items.map((wine) => (
+                      <div class="flex flex-col border-b border-golden-brown/30 pb-2" x-data="{desc:false}">
+                        <div class="flex justify-between items-start">
+                          <div>
+                            <h3 class="text-base text-white flex justify-start items-center">{wine.name}</h3>
+                            {wine.region && <p>                              
+                              <button @click="desc=!desc" class="text-sm inline-flex text-gold hover:text-satin-gold transition-colors mt-1 items-center">
+                                  <span class="mr-2">{wine.region}</span>
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                              </button>
+                            </p>}
+
+                          </div>
+                          <div class="text-right">
+                            <span class="text-gold font-medium">
+                              {wine.priceGlass ? 
+                                <span class="inline-flex items-center justify-end whitespace-nowrap">
+                                  €{wine.price.toFixed(2)} / 
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="h-5 w-5 mx-1" viewBox="0 0 24 24"><path fill="currentColor" d="M8.692 20v-1H11.5v-4.523q-2.15-.33-3.383-1.875T6.884 9V4h10.232v5q0 2.058-1.233 3.602T12.5 14.477V19h2.808v1zM7.884 8.5h8.231V5h-8.23z"/></svg>
+                                  €{wine.priceGlass.toFixed(2)}
+                                </span> 
+                                : 
+                                `€${wine.price.toFixed(2)}`
+                              }
+                            </span>
+                          </div>
+                        </div>
+                        {wine.description && (wine.description.hr || wine.description.en) && (
+                          <div x-show="desc" class="grid md:grid-cols-2 gap-4 mt-3">
+                            {wine.description.hr && (
+                              <p class="text-sm text-slate-300">{wine.description.hr}</p>
+                            )}
+                            {wine.description.en && (
+                              <p class="text-sm text-slate-300">{wine.description.en}</p>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <div class="text-center mt-16">
+          <p class="mb-6 text-satin-gold italic">All wines are available by the bottle. Selected wines are available by the glass.</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+            <Button url={import.meta.env.BASE_URL || "/"} text="Back to Home" style="primary" />
+            <Button url={import.meta.env.BASE_URL + '/en/beverages'} text="View Beverages" style="secondary" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

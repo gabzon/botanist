@@ -1,0 +1,39 @@
+---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl } from '../i18n/utils';
+
+const currentLang = getLangFromUrl(Astro.url);
+
+// Get the pathname without the language prefix
+const pathnameWithoutLang = Astro.url.pathname
+  .replace(/^\/(en|hr)\//, '/')
+  .replace(/^\/(en|hr)$/, '/');
+---
+
+<div class="language-picker">
+  <ul>
+    {Object.entries(languages).map(([lang, label]) => (
+      <li>
+        <a 
+          href={`/${lang}${pathnameWithoutLang}`} 
+          class={currentLang === lang ? 'active' : ''}
+        >
+          {label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .language-picker ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+  .active {
+    font-weight: bold;
+    color: var(--color-gold);
+  }
+</style>

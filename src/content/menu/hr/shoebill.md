@@ -1,7 +1,7 @@
 ---
 name: "/ SHOEBILL"
-description: "Cold soup made from raw, roasted and pickled beets with hazelnuts and coconut cream"
+description: "Hladna juha od sirove, pečene i ukiseljene cikle s lješnjacima i kremom od kokosa"
 price: 9.30
 category: "SOUPS"
-tags: ["vegan", "gluten-free"]
+tags: ["vegetarian"]
 ---

@@ -1,7 +1,7 @@
 ---
 name: "/ OLM"
-description: "Fish in white wine sauce, with potato and cauliflower puree, mangold, parsley, garlic and homemade olive oil sauce with tuile mesh and slanuša"
+description: "Riba u umaku od bijelog vina, s pireom od krumpira i cvjetače, blitvom, umakom od peršina, češnjaka i domaćeg maslinovog ulja s tuile mrežicom i slanušom"
 price: 23.80
 category: "MAIN COURSES"
-tags: ["pescatarian"]
+tags: ["vegetarian"]
 ---

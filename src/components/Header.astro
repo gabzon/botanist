@@ -2,25 +2,28 @@
 import { Image } from 'astro:assets';
 import logo from '../images/botanist.png';
 import Button from './Button.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { languages } from '../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = useTranslations(lang as 'en' | 'hr');
 
 const {
   info = {},
 } = Astro.props;
+
+// Get the base URL from environment
+const baseUrl = import.meta.env.BASE_URL || '';
 ---
 
 <header class="fixed w-full bg-true-black backdrop-blur-sm z-50 shadow-sm">
 	<div class="mx-auto px-4 max-w-7xl sm:px-6 lg:px-8">
     	<div class="flex items-center justify-between py-4">
 				<!-- Logo -->
-			<a href="/" class="flex items-center">
+			<a href={`${baseUrl}/${lang}/`} class="flex items-center">
 				<Image src={logo} alt="The Botanist logo" class="w-32 object-cover" loading="eager"/>
 			</a>
 
-			<!-- Desktop Navigation -->
+			<!-- Desktop Navigation - unchanged -->
 			<nav class="hidden md:flex space-x-8">
 				<a href="#hero" class="text-slate-200 hover:text-gold font-medium transition-colors">{t('nav.home')}</a>
 				<a href="#about" class="text-slate-200 hover:text-gold font-medium transition-colors">{t('nav.about')}</a>
@@ -52,8 +55,9 @@ const {
 						x-transition:leave-end="opacity-0 scale-95"
 						class="absolute right-0 mt-2 w-24 bg-true-black border border-gray-800 rounded-md shadow-lg z-50"
 						style="display: none;">
-						<a href="/en" class="block px-4 py-2 text-sm text-slate-200 hover:text-gold hover:bg-gray-900">English</a>
-						<a href="/hr" class="block px-4 py-2 text-sm text-slate-200 hover:text-gold hover:bg-gray-900">Hrvatski</a>
+						{Object.entries(languages).map(([code, label]) => (
+							<a href={`${baseUrl}/${code}/`} class={`block px-4 py-2 text-sm ${lang === code ? 'text-gold' : 'text-slate-200'} hover:text-gold hover:bg-gray-900`}>{label}</a>
+						))}
 					</div>
 				</div>
 				
@@ -103,9 +107,14 @@ const {
 			
 			<!-- Mobile Language Switcher -->
 			<div class="flex justify-center space-x-4 py-2">
-				{Object.entries(languages).map(([lang, label]) => (
-					  <a href={`/${lang}/`} class="flex items-center text-slate-200 hover:text-gold transition-colors px-3 py-1 border border-gray-800 rounded">{label}</a>
-				  ))}
+				{Object.entries(languages).map(([code, label]) => (
+					<a 
+						href={`${baseUrl}/${code}/`} 
+						class={`flex items-center ${lang === code ? 'text-gold' : 'text-slate-200'} hover:text-gold transition-colors px-3 py-1 border border-gray-800 rounded`}
+					>
+						{label}
+					</a>
+				))}
 			</div>
 			
 			<Button url={`tel:${info.phone}`} style="primary">
@@ -114,7 +123,7 @@ const {
 				</svg>
 				<span>{t('button.bookTable')}</span>
 			</Button>
-			<p class="text-center italic text-sm text-satin-gold">{t('button.callToBook')}</p>
+			<p class="text-center italic text-sm text-satin-gold">{t('button.callToBook')}</span>
 		</nav>
 	</div>
 

@@ -1,6 +1,6 @@
 ---
 name: "/ MATA-MATA"
-description: "Beetroot burger in focaccia bread with feta cheese spread, fried onion, arugula and chimichurri sauce with fried potatoes and aioli sauce"
+description: "Burger od cikle, bijelog luka i slanutka s namazom od feta sira, rukolom i chimichurri umakom u focaccia kruhu s prženim krumpirom i aioli umakom"
 price: 17.40
 category: "BURGERS"
 tags: ["vegetarian"]

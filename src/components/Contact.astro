@@ -1,20 +1,21 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang as 'en' | 'hr');
 const {info = {}} = Astro.props;
 ---
 <section id="contact" class="py-16 md:py-24 bg-true-black">
   <div class="mx-auto px-4 max-w-7xl">
     <!-- Section Header -->
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl text-gold mb-4">Contact Us</h2>
-      <p class="max-w-2xl mx-auto">
-        We'd love to hear from you! Whether you have a question, feedback, or want to make a reservation, we're here to help.
-      </p>
+      <h2 class="text-3xl md:text-4xl text-gold mb-4">{t('title','contact')}</h2>
+      <p class="max-w-2xl mx-auto">{t('description','contact')}</p>
     </div>
     
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
       <!-- Contact Form -->
       <div class="bg-true-black p-8 rounded-lg shadow-md">
-        <h3 class="text-2xl font-semibold mb-6">Contact us</h3>
+        <h3 class="text-2xl font-semibold mb-6">{t('contactUs','contact')}</h3>
         <div class="mb-8">
           <div class="flex items-start mb-4">
             <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -24,7 +25,7 @@ const {info = {}} = Astro.props;
               </svg>
             </div>
             <div>
-              <h4 class="font-medium text-gold mb-1">Address</h4>
+              <h4 class="font-medium text-gold mb-1">{t('address','contact')}</h4>
               <p>{info.address}</p>
               <p>{info.city}</p>
             </div>
@@ -37,7 +38,7 @@ const {info = {}} = Astro.props;
               </svg>
             </div>
             <div>
-              <h4 class="font-medium text-gold mb-1">Phone</h4>
+              <h4 class="font-medium text-gold mb-1">{t('phone','contact')}</h4>
               <p>
                 <a href={`tel:${info.phone}`} class="hover:text-satin-gold transition-colors">{info.phone}</a>
               </p>
@@ -51,7 +52,7 @@ const {info = {}} = Astro.props;
               </svg>
             </div>
             <div>
-              <h4 class="font-medium mb-1 text-gold">Email</h4>
+              <h4 class="font-medium mb-1 text-gold">{t('email','contact')}</h4>
               <p class="text-gray-200">
                 <a href={`mailto:${info.email}`} class="hover:text-satin-gold transition-colors">{info.email}</a>
               </p>
@@ -64,23 +65,19 @@ const {info = {}} = Astro.props;
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <div>
-              <h4 class="font-medium mb-1 text-gold">Opening Hours</h4>
-              <ul class="space-y-2">
-                {info.schedule && info.schedule.daily && (
+            <div class="w-full">
+              <h4 class="font-medium mb-1 text-gold">{t('openingHours')}</h4>
+              <ul class="space-y-2 w-full">
                   <li class="text-sm flex justify-between">
-                    <span>Daily</span>
-                    <span>{info.schedule.daily}</span>
+                    <span>{t('daily')}</span>
+                    <span>13:00 - 22:00</span>
                   </li>
-                )}
-                {info.schedule && info.schedule.wednesday && (
                   <li class="text-sm flex justify-between">
-                    <span>Wednesday</span>
-                    <span>{info.schedule.wednesday}</span>
+                    <span>{t('wednesday')}</span>
+                    <span>{t('closed')}</span>
                   </li>
-                )}
               </ul>
-              <p class="mt-1 italic text-sm text-satin-gold">(kitchen closes at 21h)</p>
+              <p class="mt-1 italic text-sm text-satin-gold">({t('kitchenHours')})</p>
             </div>
           </div>
         </div>
@@ -89,7 +86,7 @@ const {info = {}} = Astro.props;
       
       <!-- Contact Information -->
       <div>
-        <h3 class="text-2xl font-semibold mb-6">Visit Us</h3>
+        <h3 class="text-2xl font-semibold mb-6">{t('visitUs','contact')}</h3>
 
         <!-- Map -->
         <div class="rounded-lg overflow-hidden shadow-md h-96 bg-gray-100">

@@ -1,7 +1,7 @@
 ---
 name: "/ RASPBERRY CRAZY ANT"
-description: "Homemade crispy breaded nuggets with homemade fries and ketchup"
+description: "Kućni hrskavi pohanci s pomfritom i ketchupom"
 price: 14.10
 category: "KIDS MENU"
-tags: ["kid-friendly"]
+tags: ["vegetarian"]
 ---

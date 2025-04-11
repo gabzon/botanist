@@ -1,8 +1,8 @@
 ---
 name: "/ PARASTRATIOSPHECOMYIA STRATIOSPHECOMYIOIDES"
-description: "Bruschetta with zucchini spread, cauliflower and hazelnut spread and legume cream with beetroot with fresh fruit and vegetables"
+description: "Bruschette s namazom od tikvice, namazom od cvjetače i lješnjaka i kremom od mahunarki s ciklom sa svježim voćem i povrćem"
 price: 11.60
 category: "APPETIZERS"
-tags: ["vegan", "shareable"]
+tags: ["vegetarian"]
 sortOrder: 32
 ---

@@ -1,6 +1,6 @@
 ---
 name: "/ DIK-DIK"
-description: "Filet mignon with confit or mashed young potatoes, shallots, asparagus, broccoli and beets on corn cream with vegetable demiglace sauce"
+description: "Filet mignon s confitom ili gnječenim mladim krumpirom, ljutikom, šparogama i ciklom na kremi od kukuruza s demiglasom od povrća"
 price: 27.40
 category: "MAIN COURSES"
 tags: ["premium"]

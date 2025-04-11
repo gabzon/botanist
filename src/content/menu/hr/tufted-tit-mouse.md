@@ -1,7 +1,7 @@
 ---
 name: "/ TUFTED TIT MOUSE"
-description: "Tiramisu cake in liquid sweet cream with espresso coffee topping"
+description: "Tiramisu kolač u tekućoj slatkoj kremi s preljevom od espresso kave"
 price: 9.20
 category: "DESSERTS"
-tags: ["vegetarian", "coffee"]
+tags: ["vegetarian"]
 ---

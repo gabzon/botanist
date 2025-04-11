@@ -1,5 +1,8 @@
 ---
-// Import necessary for Astro image handling
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang as 'en' | 'hr');
+
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
@@ -17,10 +20,8 @@ galleryImages.forEach((image, index) => {
 
 <section class="gallery-section py-16 md:py-24">
   <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-gold mb-4 text-center">Our Gallery</h2>
-    <p class="max-w-2xl mx-auto text-slate-200 text-center">
-        Experience the ambiance, artistry, and attention to detail that defines <i>The Botanist</i> through our curated gallery of images.
-    </p>
+    <h2 class="text-3xl md:text-4xl font-bold text-gold mb-4 text-center">{t('title','gallery')}</h2>
+    <p class="max-w-2xl mx-auto text-slate-200 text-center">{t('subtitle','gallery')}</p>
     <!-- Masonry-style gallery grid -->
     <div class="pswp-gallery grid grid-cols-2 sm:grid-cols-4 gap-2 mt-12" id="gallery">
       {columns.map((column, colIndex) => (

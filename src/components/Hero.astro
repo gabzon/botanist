@@ -1,4 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang as 'en' | 'hr');
+
 import { Image } from 'astro:assets';
 import hero from '../images/hero.jpg';
 import logo from '../images/botanist-slogan.png';
@@ -9,11 +13,7 @@ const {
 } = Astro.props;
 ---
 
-
-
-
-<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Background Image with Overlay -->
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">  
   <div class="absolute inset-0 z-0">
     <div class="absolute inset-0 bg-gradient-to-b from-moss-green/10 to-black/30 z-10"></div>
     <Image src={hero} alt="The Botanist cover image" class="w-full h-full object-cover" loading="eager"/>
@@ -22,28 +22,25 @@ const {
   <!-- Hero Content -->
   <div class="mx-auto max-w-7xl relative z-20 text-center px-4 sm:px-6 lg:px-8 py-20 mt-16">
     <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 drop-shadow-lg">
-      <!-- The Botanist <br> -->
       <Image src={logo} alt="The Botanist logo" class="w-8/9 sm:w-6/7 md:w-3/4 lg:w-2/3 mx-auto object-cover" loading="eager"/>
-      <!-- <span class="text-satin-gold text-2xl md:text-3xl lg:text-4xl block mt-2">The Plant Based Restaurant</span> -->
     </h1>
     
     <p class="text-white text-lg md:text-xl max-w-2xl mx-auto mb-8 drop-shadow-md">
-      <!-- {t.subtitle} -->
+      {t('text', 'hero')}
     </p>
     
     <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-      <Button url="#menu" text="Explore Our Menu" style="secondary" />
+      <Button url="#menu" text={t('button.exploreMenu')} style="secondary" />
       
-        <Button url={`tel:${info.phone}`} style="primary">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-          </svg>
-          <span>Book a Table</span>
-        </Button>
+      <Button url={`tel:${info.phone}`} style="primary">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+        </svg>
+        <span>{t('button.bookTable')}</span>
+      </Button>
     </div>
-    <span class="block italic text-sm mt-2 text-satin-gold">call us between 12-22h to reserve your table</span>
+    <span class="block italic text-sm mt-2 text-satin-gold">{t('button.callToBook')}</span>
     
-
     <!-- Rating Badge -->
     <div class="mt-12 inline-block bg-white/10 backdrop-blur-sm px-6 py-4 rounded-lg border border-white/20">
       <div class="flex items-center justify-center">
@@ -54,7 +51,7 @@ const {
             </svg>
           ))}
         </div>
-        <span class="text-white font-medium">4.9/5 from over 5,500 reviews</span>
+        <span class="text-white font-medium">{t('reviews', 'hero')}</span>
       </div>
     </div>
 

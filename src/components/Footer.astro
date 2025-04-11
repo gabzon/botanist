@@ -1,6 +1,10 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang as 'en' | 'hr');
 const {info = {}} = Astro.props;
 ---
+
 
 <footer class="bg-true-black text-white pt-16 pb-8">
   <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -10,7 +14,7 @@ const {info = {}} = Astro.props;
       <div>
         <h3 class="text-xl font-medium text-satin-gold mb-4">The Botanist</h3>
         <p class="text-sm leading-relaxed mb-4">
-          A vegan restaurant inspired by Dalmatia's rich culinary heritage of herbs, spices, and fresh local produce.
+          {t('about', 'footer')}
         </p>
         <div class="flex space-x-4 mt-4">
           <a href={info.facebook} aria-label="Facebook" class="text-white hover:text-satin-gold transition-colors">
@@ -33,40 +37,38 @@ const {info = {}} = Astro.props;
 
       <!-- Column 2: Quick Links -->
       <div>
-        <h3 class="text-xl font-medium text-satin-gold mb-4">Quick Links</h3>
+        <h3 class="text-xl font-medium text-satin-gold mb-4">{t('quickLinks', 'footer')}</h3>
         <ul class="space-y-2">
-          <li><a href="#hero" class="text-sm hover:text-satin-gold transition-colors">Home</a></li>
-          <li><a href="#about" class="text-sm hover:text-satin-gold transition-colors">About</a></li>
-          <li><a href="#menu" class="text-sm hover:text-satin-gold transition-colors">Our Menu</a></li>
-          <li><a href="#gallery" class="text-sm hover:text-satin-gold transition-colors">Gallery</a></li>
-          <li><a href="#contact" class="text-sm hover:text-satin-gold transition-colors">Contact Us</a></li>
-          <li><a href="#" class="text-sm hover:text-satin-gold transition-colors">Book a Table</a></li>
+          <li><a href="#hero" class="text-sm hover:text-satin-gold transition-colors">{t('nav.home')}</a></li>
+          <li><a href="#about" class="text-sm hover:text-satin-gold transition-colors">{t('nav.about')}</a></li>
+          <li><a href="#menu" class="text-sm hover:text-satin-gold transition-colors">{t('nav.menu')}</a></li>
+          <li><a href="#gallery" class="text-sm hover:text-satin-gold transition-colors">{t('nav.gallery')}</a></li>
+          <li><a href="#contact" class="text-sm hover:text-satin-gold transition-colors">{t('nav.contact')}</a></li>
+          <li><a href="#" class="text-sm hover:text-satin-gold transition-colors">{t('button.bookTable')}</a></li>
         </ul>
       </div>
 
       <!-- Column 3: Opening Hours -->
       <div>
-        <h3 class="text-xl font-medium text-satin-gold mb-4">Opening Hours</h3>
+        <h3 class="text-xl font-medium text-satin-gold mb-4">{t('openingHours')}</h3>
         <ul class="space-y-2">
-          {info.schedule && info.schedule.daily && (
             <li class="text-sm flex justify-between">
-              <span>Daily</span>
-              <span>{info.schedule.daily}</span>
+              <span>{t('daily')}</span>
+              <span>13:00 - 22:00</span>
             </li>
-          )}
-          {info.schedule && info.schedule.wednesday && (
+          
             <li class="text-sm flex justify-between">
-              <span>Wednesday</span>
-              <span>{info.schedule.wednesday}</span>
+              <span>{t('wednesday')}</span>
+              <span>{t('closed')}</span>
             </li>
-          )}
+          
         </ul>
-        <p class="mt-1 italic text-sm text-satin-gold">(kitchen closes at 21h)</p>
+        <p class="mt-1 italic text-sm text-satin-gold">({t('kitchenHours')})</p>
       </div>
 
       <!-- Column 4: Contact -->
       <div>
-        <h3 class="text-xl font-medium text-satin-gold mb-4">Contact Us</h3>
+        <h3 class="text-xl font-medium text-satin-gold mb-4">{t('contact')}</h3>
         <address class="not-italic">
           <p class="text-sm mb-2">{info.address}</p>
           <p class="text-sm mb-2">{info.city}</p>
@@ -82,7 +84,7 @@ const {info = {}} = Astro.props;
 
     <!-- Bottom Footer -->
     <div class="pt-8 border-t border-gray-700 text-center text-xs text-gray-400">
-      <p>&copy; {new Date().getFullYear()} The Botanist. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} The Botanist. {t('copyrights', 'footer')}</p>
       <p class="mt-2">
         Made with
         <a href="https://corazon.dance" target="_blank" class="text-gray-400 hover:text-gold">
@@ -94,7 +96,7 @@ const {info = {}} = Astro.props;
                   transform="translate(-10.99 -72.25)" />
           </svg>
         </a>
-        for plant-based cuisine and our planet.
+        {t('for', 'footer')}
       </p>
       
     </div>

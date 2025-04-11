@@ -7,6 +7,7 @@ interface Props {
 	description?: string;
 }
 const { title = 'The Botanist | Vegan Restaurant in Zadar, Croatia', description = 'The Botanist is a vegan restaurant in Zadar, Croatia, inspired by Dalmatia\'s rich culinary heritage of herbs, spices, and fresh local produce.' } = Astro.props;
+import Icon from '../components/Icon.astro';
 ---
 
 <!doctype html>
@@ -14,9 +15,12 @@ const { title = 'The Botanist | Vegan Restaurant in Zadar, Croatia', description
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+		<link rel="manifest" href={import.meta.env.BASE_URL + '/site.webmanifest'}>
 		<title>{title}</title>
 		
 		<!-- Google Fonts -->

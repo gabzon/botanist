@@ -1,8 +1,8 @@
 ---
 name: "/ WHIP-POOR-WILL"
-description: "Fresh fennel salad with hazelnuts, apple, orange, purple onion with fennel seeds, mint and grape berry oil"
+description: "Salata od koromača s lješnjacima, jabukom, narančom, ljubičastom kapulom sa sjemenkama koromača, mentom i uljem od bobica grožđa"
 price: 10.10
 category: "SALADS"
-tags: ["vegan", "seasonal"]
+tags: ["vegetarian"]
 sortOrder: 3
 ---

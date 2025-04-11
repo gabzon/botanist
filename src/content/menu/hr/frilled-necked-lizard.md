@@ -1,6 +1,6 @@
 ---
 name: "/ FRILLED-NECKED LIZARD"
-description: "Cheesecake in a glass with raspberry puree or coconut & chocolate on a crunchy crumble"
+description: "Cheesecake u čaši s pireom od malina ili žličnjaci od kokosa, čokolade na hrskavom crumbleu"
 price: 8.20
 category: "DESSERTS"
 tags: ["vegetarian"]

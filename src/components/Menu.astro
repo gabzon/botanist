@@ -1,20 +1,43 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang as 'en' | 'hr');
+
 import { getCollection } from 'astro:content';
 import MenuCard from './MenuCard.astro';
 import Button from './Button.astro';
-import { getRelativeLocaleUrl } from 'astro:i18n';
 
-// const menuItems = await getCollection('menu');
-const salads = await getCollection('menu', ({ data }) => { return data.category === 'SALADS'; });
-const soups = await getCollection('menu', ({ data }) => { return data.category === 'SOUPS'; });
-const appetizers = await getCollection('menu', ({ data }) => { return data.category === 'APPETIZERS'; });
-const mainCourses = await getCollection('menu', ({ data }) => { return data.category === 'MAIN COURSES'; });
-const burgers = await getCollection('menu', ({ data }) => { return data.category === 'BURGERS'; });
-const kidsMenu = await getCollection('menu', ({ data }) => { return data.category === 'KIDS MENU'; });
-const desserts = await getCollection('menu', ({ data }) => { return data.category === 'DESSERTS'; });
+// Filter menu items by language
+const salads = await getCollection('menu', ({ id, data }) => {
+  return data.category === 'SALADS' && id.startsWith(`${lang}/`);
+});
+const soups = await getCollection('menu', ({ id, data }) => {
+  return data.category === 'SOUPS' && id.startsWith(`${lang}/`);
+});
+const appetizers = await getCollection('menu', ({ id, data }) => {
+  return data.category === 'APPETIZERS' && id.startsWith(`${lang}/`);
+});
+const mainCourses = await getCollection('menu', ({ id, data }) => {
+  return data.category === 'MAIN COURSES' && id.startsWith(`${lang}/`);
+});
+const burgers = await getCollection('menu', ({ id, data }) => {
+  return data.category === 'BURGERS' && id.startsWith(`${lang}/`);
+});
+const kidsMenu = await getCollection('menu', ({ id, data }) => {
+  return data.category === 'KIDS MENU' && id.startsWith(`${lang}/`);
+});
+const desserts = await getCollection('menu', ({ id, data }) => {
+  return data.category === 'DESSERTS' && id.startsWith(`${lang}/`);
+});
 
 const sortedSalads = salads.sort((a:any, b:any) => a.data.sortOrder - b.data.sortOrder);
+const sortedSoups = soups.sort((a:any, b:any) => a.data.sortOrder - b.data.sortOrder);
 const sortedAppetizers = appetizers.sort((a:any, b:any) => a.data.sortOrder - b.data.sortOrder);
+const sortedMainCourses = mainCourses.sort((a:any, b:any) => a.data.sortOrder - b.data.sortOrder);
+const sortedBurgers = burgers.sort((a:any, b:any) => a.data.sortOrder - b.data.sortOrder);
+const sortedKidsMenu = kidsMenu.sort((a:any, b:any) => a.data.sortOrder - b.data.sortOrder);
+const sortedDesserts = desserts.sort((a:any, b:any) => a.data.sortOrder - b.data.sortOrder);
+
 const {
   info = {}
 } = Astro.props;
@@ -23,10 +46,8 @@ const {
 <section id="menu" class="bg-true-black py-16 md:py-24">
   	<div class="mx-auto px-4 max-w-7xl sm:px-6 lg:px-8">
     	<div class="text-center mb-16">
-      		<h2 class="text-3xl md:text-4xl font-bold text-gold mb-4">Our Menu</h2>
-      		<p class="max-w-2xl mx-auto text-slate-200">
-        		Inspired by Dalmatian culinary traditions, our plant-based menu celebrates local ingredients and sustainable practices.
-      		</p>
+      		<h2 class="text-3xl md:text-4xl font-bold text-gold mb-4">{t('title','menu')}</h2>
+      		<p class="max-w-2xl mx-auto text-slate-200">{t('description','menu')}</p>
 		</div>
 
 		<!-- Menu Categories Tabs -->
@@ -34,34 +55,34 @@ const {
 			<div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
 				<button @click="activeTab = 'salads'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
 					:class="{ 'bg-gold text-true-black': activeTab === 'salads', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'salads' }">
-					Salads
+					{t('salads','menu')}
 				</button>
 				<button @click="activeTab = 'soups'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
 					:class="{ 'bg-gold text-true-black': activeTab === 'soups', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'soups' }">
-					Soups
+					{t('soups','menu')}
 				</button>
 				<button @click="activeTab = 'appetizers'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
 					:class="{ 'bg-gold text-true-black': activeTab === 'appetizers', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'appetizers' }">
-					Appetizers
+					{t('appetizers','menu')}
 				</button>
 				<button @click="activeTab = 'main-courses'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
 					:class="{ 'bg-gold text-true-black': activeTab === 'main-courses', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'main-courses' }">
-					Main Course
+					{t('mainCourse','menu')}
 				</button>
 				<button @click="activeTab = 'burgers'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300 text-black"
 					:class="{ 'bg-gold text-true-black': activeTab === 'burgers', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'burgers' }">
-					Burgers
+					{t('burgers','menu')}
 				</button>
 				<button @click="activeTab = 'kids-menu'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
 					:class="{ 'bg-gold text-true-black': activeTab === 'kids-menu', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'kids-menu' }">
-					Kids Menu
+					{t('kidsMenu','menu')}
 				</button>
 				<button @click="activeTab = 'desserts'" class="px-4 py-2 rounded-md font-medium transition-colors duration-300"
 					:class="{ 'bg-gold text-true-black': activeTab === 'desserts', 'border border-gold text-gold hover:bg-gold hover:text-white': activeTab !== 'desserts' }">
-					Desserts
+					{t('desserts','menu')}
 				</button>
 			</div>
-
+			
 			<!-- Salads -->
 			<div x-show="activeTab === 'salads'" class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{sortedSalads.map(item => (
@@ -71,7 +92,7 @@ const {
 			
 			<!-- Soups -->
 			<div x-show="activeTab === 'soups'"  class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{soups.map(item => (
+				{sortedSoups.map(item => (
 					<MenuCard item={item.data} />
 				))}
 			</div>	
@@ -85,48 +106,46 @@ const {
 
 			<!-- Main Courses -->
 			<div x-show="activeTab === 'main-courses'"  class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{mainCourses.map(item => (
+				{sortedMainCourses.map(item => (
 					<MenuCard item={item.data} />
 				))}
 			</div>	
 
 			<!-- Burgers -->
 			<div x-show="activeTab === 'burgers'"  class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{burgers.map(item => (
+				{sortedBurgers.map(item => (
 					<MenuCard item={item.data} />
 				))}
 			</div>	
 			
 			<!-- Kids Menu -->
 			<div x-show="activeTab === 'kids-menu'" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{kidsMenu.map(item => (
+				{sortedKidsMenu.map(item => (
 					<MenuCard item={item.data} />
 				))}
 			</div>	
 
 			<!-- Desserts -->
 			<div x-show="activeTab === 'desserts'" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{desserts.map(item => (
+				{sortedDesserts.map(item => (
 					<MenuCard item={item.data} />
 				))}
 			</div>	
-
 		</div>
-
 
     	<!-- Call to Action -->
     	<div class="text-center mt-12">
-      		<p class="mb-6 text-satin-gold italic">Our menu changes seasonally to showcase the freshest local ingredients. All dishes are 100% plant-based.</p>
+      		<p class="mb-6 text-satin-gold italic">{t('note','menu')}</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button url={import.meta.env.BASE_URL + '/beverages'} text="Wine & Beverages" style="secondary" />
+				<Button url={`${import.meta.env.BASE_URL}/${lang}/beverages`} text={t('drinks','menu')} style="secondary" />
 				<Button url={`tel:${info.phone}`} style="primary">
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" viewBox="0 0 20 20" fill="currentColor">
 					  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
 					</svg>
-					<span>Book a Table</span>
+					<span>{t('button.bookTable')}</span>
 				</Button>
 			</div>
-			<span class="block italic text-sm mt-2 text-satin-gold">call us between 12-22h to reserve your table</span>
+			<span class="block italic text-sm mt-2 text-satin-gold">{t('button.callToBook')}</span>
     	</div>
   	</div>
 </section>
