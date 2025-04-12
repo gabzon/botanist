@@ -5,6 +5,8 @@ import Button from './Button.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang as 'en' | 'hr');
+import { getRelativeLocaleUrl } from 'astro:i18n';
+const aboutUrl = getRelativeLocaleUrl(lang, 'about');
 ---
 
 <section id="about" class="py-16 md:py-24 bg-true-black">
@@ -17,8 +19,9 @@ const t = useTranslations(lang as 'en' | 'hr');
         		<p class="mb-4 text-satin-gold">{t('veganism','about')}</p>
         		<p class="mb-6 text-satin-gold">{t('grandparents','about')}</p>        
 				<div class="flex flex-col sm:flex-row gap-4">
-				<Button url="#menu" text={t('button.exploreMenu')} style="primary" />
-				<Button url={import.meta.env.BASE_URL + `/${lang}/about`} text={t('button.learnMore')} style="secondary" />
+					<Button url="#menu" text={t('button.exploreMenu')} style="primary" />
+					<!-- <Button url={import.meta.env.BASE_URL + `/${lang}/about`} text={t('button.learnMore')} style="secondary" /> -->
+					<Button url={aboutUrl} text={t('button.learnMore')} style="secondary" />
 				</div>
 
         		<div class="grid grid-cols-2 gap-6 pt-14">
