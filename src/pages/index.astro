@@ -5,4 +5,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 const defaultLocaleUrl = getRelativeLocaleUrl('en', '');
 ---
 
-<meta http-equiv="refresh" content={`0;url=${defaultLocaleUrl}`} />
+<!-- <meta http-equiv="refresh" content={`0;url=${defaultLocaleUrl}`} /> -->
+<script is:inline>
+    window.location.replace(`${import.meta.env.BASE_URL}${'en'}/`);
+</script>
