@@ -5,8 +5,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://gabzon.github.io',
-  base: '/botanist', // Add the leading slash for GitHub Pages
+  // site: 'https://gabzon.github.io',
+  site:'https://botanistzadar.com',
+  // base: '/botanist', // Add the leading slash for GitHub Pages
   // trailingSlash: "never",
   output: 'static',
   vite: {
