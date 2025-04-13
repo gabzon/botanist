@@ -3,9 +3,16 @@ import { Image } from 'astro:assets';
 import logo from '../images/botanist.png';
 import Button from './Button.astro';
 import { languages } from '../i18n/ui';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-const lang = getLangFromUrl(Astro.url);
+// import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+import { getRelativeLocaleUrl } from 'astro:i18n';
+// First, get the locale from the URL
+const lang = Astro.currentLocale || 'en';
+
+// Then use the locale for translations and home URL
 const t = useTranslations(lang as 'en' | 'hr');
+const home = getRelativeLocaleUrl(lang, '/');
 
 const {
   info = {},
@@ -19,7 +26,7 @@ const baseUrl = import.meta.env.BASE_URL || '';
 	<div class="mx-auto px-4 max-w-7xl sm:px-6 lg:px-8">
     	<div class="flex items-center justify-between py-4">
 				<!-- Logo -->
-			<a href={`${baseUrl}/${lang}/`} class="flex items-center">
+			<a href={home} class="flex items-center">
 				<Image src={logo} alt="The Botanist logo" class="w-32 object-cover" loading="eager"/>
 			</a>
 
@@ -56,7 +63,7 @@ const baseUrl = import.meta.env.BASE_URL || '';
 						class="absolute right-0 mt-2 w-24 bg-true-black border border-gray-800 rounded-md shadow-lg z-50"
 						style="display: none;">
 						{Object.entries(languages).map(([code, label]) => (
-							<a href={`${baseUrl}/${code}/`} class={`block px-4 py-2 text-sm ${lang === code ? 'text-gold' : 'text-slate-200'} hover:text-gold hover:bg-gray-900`}>{label}</a>
+							<a href={getRelativeLocaleUrl(code,'')} class={`block px-4 py-2 text-sm ${lang === code ? 'text-gold' : 'text-slate-200'} hover:text-gold hover:bg-gray-900`}>{label}</a>
 						))}
 					</div>
 				</div>
@@ -109,7 +116,7 @@ const baseUrl = import.meta.env.BASE_URL || '';
 			<div class="flex justify-center space-x-4 py-2">
 				{Object.entries(languages).map(([code, label]) => (
 					<a 
-						href={`${baseUrl}/${code}/`} 
+						href={getRelativeLocaleUrl(code,'')} 
 						class={`flex items-center ${lang === code ? 'text-gold' : 'text-slate-200'} hover:text-gold transition-colors px-3 py-1 border border-gray-800 rounded`}
 					>
 						{label}

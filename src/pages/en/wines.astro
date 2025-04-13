@@ -2,11 +2,16 @@
 import Layout from '../../layouts/Layout.astro';
 import Button from '../../components/Button.astro';
 import wines from '../../data/wines.json';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getLangFromUrl } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const home = getRelativeLocaleUrl(lang, '/');
+const beverages = getRelativeLocaleUrl(lang, '/beverages');
 ---
 
 <Layout title="Wine List | Botanist">
   <main class="bg-true-black text-white min-h-screen">
-    <a href={import.meta.env.BASE_URL || '/'} class="absolute top-8 left-6 lg:left-8 flex items-center text-gold hover:text-satin-gold transition-colors">
+    <a href={home} class="absolute top-8 left-6 lg:left-8 flex items-center text-gold hover:text-satin-gold transition-colors">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
         <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
       </svg>
@@ -20,7 +25,7 @@ import wines from '../../data/wines.json';
           <p class="max-w-2xl mx-auto text-slate-200 mb-6">
             Explore our carefully curated selection of wines from Croatia and around the world, featuring local varietals and international classics.
           </p>
-          <a href={import.meta.env.BASE_URL + '/en/beverages'} class="px-4 py-2 rounded-md font-medium transition-colors duration-300 border border-gold text-gold hover:bg-gold hover:text-true-black">
+          <a href={beverages} class="px-4 py-2 rounded-md font-medium transition-colors duration-300 border border-gold text-gold hover:bg-gold hover:text-true-black">
             View Beverages
           </a>
         </div>
@@ -95,8 +100,8 @@ import wines from '../../data/wines.json';
         <div class="text-center mt-16">
           <p class="mb-6 text-satin-gold italic">All wines are available by the bottle. Selected wines are available by the glass.</p>
           <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-            <Button url={import.meta.env.BASE_URL || "/"} text="Back to Home" style="primary" />
-            <Button url={import.meta.env.BASE_URL + '/en/beverages'} text="View Beverages" style="secondary" />
+            <Button url={home} text="Back to Home" style="primary" />
+            <Button url={beverages} text="View Beverages" style="secondary" />
           </div>
         </div>
       </div>

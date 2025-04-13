@@ -2,8 +2,10 @@
 import { Image } from 'astro:assets';
 import story from '../images/story.jpg';
 import Button from './Button.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-const lang = getLangFromUrl(Astro.url);
+// import { getLangFromUrl, useTranslations } from '../i18n/utils';
+// const lang = getLangFromUrl(Astro.url);
+import {  useTranslations } from '../i18n/utils';
+const lang = Astro.currentLocale || 'en';
 const t = useTranslations(lang as 'en' | 'hr');
 import { getRelativeLocaleUrl } from 'astro:i18n';
 const aboutUrl = getRelativeLocaleUrl(lang, 'about');

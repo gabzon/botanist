@@ -1,6 +1,8 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-const lang = getLangFromUrl(Astro.url);
+// import { getLangFromUrl, useTranslations } from '../i18n/utils';
+// const lang = getLangFromUrl(Astro.url);
+import { useTranslations } from '../i18n/utils';
+const lang = Astro.currentLocale || 'en';
 const t = useTranslations(lang as 'en' | 'hr');
 const {info = {}} = Astro.props;
 ---
