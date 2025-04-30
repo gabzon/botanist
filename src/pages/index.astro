@@ -1,11 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-import { getRelativeLocaleUrl } from 'astro:i18n';
-
-// Redirect to the default locale (en)
-const defaultLocaleUrl = getRelativeLocaleUrl('en', '');
 ---
-<Layout>
-  <!-- This page will never be shown as middleware will redirect to /en -->
-</Layout>
+// No imports or layout
+<html lang="en">
+  <head>
+    <meta http-equiv="refresh" content="0; url=/en/" />
+    <script>
+      window.location.replace('/en/');
+    </script>
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/en/" />
+      <p>Redirecting to <a href="/en/">/en/</a>...</p>
+    </noscript>
+  </body>
+</html>
