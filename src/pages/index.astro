@@ -1,11 +1,11 @@
 ---
+import Layout from '../layouts/Layout.astro';
+
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
 // Redirect to the default locale (en)
 const defaultLocaleUrl = getRelativeLocaleUrl('en', '');
 ---
-
-<!-- <meta http-equiv="refresh" content={`0;url=${defaultLocaleUrl}`} /> -->
-<script is:inline>
-    window.location.replace(`${import.meta.env.BASE_URL}${defaultLocaleUrl}/`);
-</script>
+<Layout>
+  <!-- This page will never be shown as middleware will redirect to /en -->
+</Layout>

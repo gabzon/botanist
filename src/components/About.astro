@@ -4,6 +4,9 @@ import story from '../images/story.jpg';
 import Button from './Button.astro';
 // import { getLangFromUrl, useTranslations } from '../i18n/utils';
 // const lang = getLangFromUrl(Astro.url);
+import TreeLeft from './TreeLeft.astro';
+import TreeRight from './TreeRight.astro';
+import Icon from './Icon.astro';
 import {  useTranslations } from '../i18n/utils';
 const lang = Astro.currentLocale || 'en';
 const t = useTranslations(lang as 'en' | 'hr');
@@ -11,8 +14,12 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 const aboutUrl = getRelativeLocaleUrl(lang, 'about');
 ---
 
-<section id="about" class="py-16 md:py-24 bg-true-black">
-	<div class="mx-auto px-4 max-w-7xl sm:px-6 lg:px-8">
+<section id="about" class="relative py-16 md:py-24 bg-true-black">
+
+	<!-- <TreeRight styles="text-gray-600 opacity-10 left-0 text-left absolute top-0 z-0"/> -->
+	<Icon styles="text-gray-600 opacity-10 left-0 text-left absolute top-0 z-0"/>
+
+	<div class="mx-auto px-4 max-w-7xl sm:px-6 lg:px-8 relative z-10">
     	<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       		<div>
         		<p class="text-xl text-gold font-barlow">{t('ourStory','about')}</p>
@@ -55,42 +62,51 @@ const aboutUrl = getRelativeLocaleUrl(lang, 'about');
 				<div class="absolute -top-6 -right-6 w-24 h-24 bg-moss-green/20 rounded-lg -z-10"></div>
       		</div>
     	</div>
-    
-		<!-- Values Section -->
-    	<div class="mt-20">
-      		<h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-gold">{t('values' , 'about')}</h3>
-      		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-			<!-- Value 1 -->
-			<div class="p-6 rounded-lg shadow-md border-t-5 border-gold">
-				<div class="w-12 h-12 bg-black-olive rounded-full flex items-center justify-center mb-4">
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-					</svg>
+	</div>		
+
+	<div class="relative">
+
+		<div class="absolute inset-0 z-0 flex justify-end z-0">
+			 <TreeLeft styles="text-gray-600 opacity-10 right-0 text-right "/>
+		</div>
+
+		<div class="mx-auto px-4 max-w-7xl sm:px-6 lg:px-8 relative z-10">
+			<!-- Values Section -->
+			<div class="mt-20">
+				<h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-gold">{t('values' , 'about')}</h3>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<!-- Value 1 -->
+				<div class="p-6 rounded-lg shadow-md border-t-5 border-gold">
+					<div class="w-12 h-12 bg-black-olive rounded-full flex items-center justify-center mb-4">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+						</svg>
+					</div>
+					<h4 class="text-xl text-satin-gold font-semibold mb-3">{t('sustainable', 'about')}</h4>
+					<p class="text-gray-100">{t('sustainableText', 'about')}</p>
 				</div>
-				<h4 class="text-xl text-satin-gold font-semibold mb-3">{t('sustainable', 'about')}</h4>
-				<p class="text-gray-100">{t('sustainableText', 'about')}</p>
+			
+				<!-- Value 2 -->
+				<div class="p-6 rounded-lg shadow-md border-t-5 border-gold">
+					<div class="w-12 h-12 bg-black-olive rounded-full flex items-center justify-center mb-4">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-gold"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/></svg>
+					</div>
+					<h4 class="text-xl font-semibold mb-3 text-satin-gold">{t('culinaryExcellence', 'about')}</h4>
+					<p class="text-gray-100">{t('culinaryExcellenceText', 'about')}</p>
+				</div>
+			
+				<!-- Value 3 -->
+				<div class="p-6 rounded-lg shadow-md border-t-5 border-gold">
+					<div class="w-12 h-12 bg-black-olive rounded-full flex items-center justify-center mb-4">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+						</svg>
+					</div>
+						<h4 class="text-xl font-semibold mb-3 text-satin-gold">{t('communityConnection', 'about')}</h4>
+						<p class="text-white">{t('communityConnectionText', 'about')}</p>
+					</div>
+				</div>
 			</div>
-        
-			<!-- Value 2 -->
-			<div class="p-6 rounded-lg shadow-md border-t-5 border-gold">
-				<div class="w-12 h-12 bg-black-olive rounded-full flex items-center justify-center mb-4">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-gold"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/></svg>
-				</div>
-				<h4 class="text-xl font-semibold mb-3 text-satin-gold">{t('culinaryExcellence', 'about')}</h4>
-				<p class="text-gray-100">{t('culinaryExcellenceText', 'about')}</p>
-			</div>
-        
-			<!-- Value 3 -->
-			<div class="p-6 rounded-lg shadow-md border-t-5 border-gold">
-				<div class="w-12 h-12 bg-black-olive rounded-full flex items-center justify-center mb-4">
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-					</svg>
-				</div>
-					<h4 class="text-xl font-semibold mb-3 text-satin-gold">{t('communityConnection', 'about')}</h4>
-					<p class="text-white">{t('communityConnectionText', 'about')}</p>
-				</div>
-      		</div>
     	</div>
 	</div>
 </section>
